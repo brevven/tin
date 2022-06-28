@@ -1,0 +1,7 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.0.1
+Date: 2022-07-01
+  Features:
+    - Alpha release. Adds tin, solder, and other optional intermediates
+    - Compatible with Krastorio 2
+    - Compatible with Space Exploration
