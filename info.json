@@ -14,7 +14,7 @@
       "? bzzirconium >= 0.5.4",
       "? bztungsten >= 0.5.4",
       "? bzcarbon >= 0.2.0",
-      "? space-exploration",
+      "? space-exploration >= 0.6.0",
       "? aai-industry",
       "? Krastorio2",
       "? deadlock-beltboxes-loaders",

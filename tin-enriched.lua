@@ -32,7 +32,8 @@ data:extend(
     allow_productivity = true,
     ingredients =
     {
-      {type = "fluid", name = "sulfuric-acid", amount = 3},
+      mods.bzcarbon and {type = "item", name = "graphite", amount = 1}
+      or {type = "fluid", name = "sulfuric-acid", amount = 3},
       {type = "fluid", name = "water", amount = 25, catalyst_amount = 25},
       {type = "item",  name = "tin-ore", amount = 9}
     },
