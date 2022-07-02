@@ -9,7 +9,6 @@ data:extend({
     type = "recipe",
     name = "tin-plate",
     category = "smelting",
-    subgroup = "raw-material",
     order = "d[tin-plate]",
     icons = (mods["Krastorio2"] and
         {
@@ -21,14 +20,16 @@ data:extend({
 ),
     normal = (mods["Krastorio2"] and
         {
+          main_product = "tin-plate",
           enabled = true,
           energy_required = 12,
           ingredients = {{"tin-ore", 10}},
           results = {
-            {type="item", name = "tin-plate", amount=10}
+            {type="item", name = "tin-plate", amount=5}
           }
         } or
         {
+          main_product = "tin-plate",
           enabled = true,
           energy_required = 2.4,
           ingredients = {{"tin-ore", 1}},
@@ -38,6 +39,7 @@ data:extend({
         }),
     expensive =
     {
+      main_product = "tin-plate",
       enabled = true,
       energy_required = 4.8,
       ingredients = {{"tin-ore", 1}},
@@ -57,9 +59,9 @@ data:extend({
   },
 })
 
-local solder_ingredeents = {{"tin-plate", 4}, {"copper-plate"}, 1}
+local solder_ingredients = {{"tin-plate", 4}, {"copper-plate"}, 1}
 if mods.bzlead then
-  solder_ingredeents = {{"tin-plate", 3}, {"lead-plate", 2}}
+  solder_ingredients = {{"tin-plate", 3}, {"lead-plate", 2}}
 end
 data:extend({
   {
@@ -78,8 +80,8 @@ data:extend({
     order = "d[acsr-cable]",
     enabled = true,
     energy_required = 1,
-    ingredients = solder_ingredeents, 
-    results = {{"solder", 5}},
+    ingredients = solder_ingredients, 
+    results = {{"solder", 4}},
   }
 })
 
@@ -98,9 +100,9 @@ data:extend({
   {
     type = "recipe",
     name = "organotins",
-    category = "oil-processing",
+    category = "chemistry",
     subgroup = "fluid-recipes",
-    order = "d[organotins]",
+    order = "h[organotins]",
     enabled = true,
     energy_required = 5,
     ingredients = {{"tin-plate", 3}, {type="fluid", name="petroleum-gas", amount=20}},
@@ -108,7 +110,7 @@ data:extend({
   },
   {
     type = "technology",
-    name = "organotins",
+    name = "organotin-chemistry",
     icon = "__bztin__/graphics/technology/organotins.png",
     icon_size = 256,
     effects = {
@@ -123,7 +125,7 @@ data:extend({
   },
 })
 
-util.add_prerequisite("plastics", "organotins")
+util.add_prerequisite("plastics", "organotin-chemistry")
 
 if util.me.use_cable() then
 data:extend({

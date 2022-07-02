@@ -22,6 +22,7 @@ data:extend(
   {
     type = "recipe",
     name = "enriched-tin",
+    main_product="enriched-tin",
     icon = "__bztin__/graphics/icons/enriched-tin.png",
     icon_size = 128,
     category = "chemistry",
@@ -54,10 +55,10 @@ data:extend(
   },
   {
       type = "recipe",
-      name = "enriched-alumina",
+      name = "enriched-tin-plate",
       icons =
       {
-        { icon = "__bztin__/graphics/icons/alumina.png", icon_size = 128 },
+        { icon = "__bztin__/graphics/icons/tin-plate.png", icon_size = 128 },
         { icon = "__bztin__/graphics/icons/enriched-tin.png", icon_size = 128, scale=0.125, shift= {-8, -8}},
       },
       category = "smelting",
@@ -67,8 +68,8 @@ data:extend(
       always_show_products = true,
       allow_productivity = true,
       ingredients = { {"enriched-tin", 5} },
-      results = { {"alumina", 5} },
-      order = "b[alumina]-b[enriched-alumina]",
+      results = { {"tin-plate", 5} },
+      order = "b[tin-plate]-b[enriched-tin-plate]",
   },	
 	{
 		type = "recipe",
@@ -100,7 +101,6 @@ data:extend(
 		results =
 		{
 			{type = "fluid", name = "water", amount = 90, catalyst_amount = 90},
-			mods.bzsilicon and {type = "item",  name = "silica", amount = 1} or 
 			{type = "item",  name = "stone", probability = 0.40, amount = 1},
 			{type = "item",  name = "tin-ore", probability = 0.10, amount = 1},
 		},
@@ -115,6 +115,6 @@ data:extend(
 }
 )
 util.add_effect("kr-enriched-ores", { type = "unlock-recipe", recipe = "enriched-tin" })
-util.add_effect("kr-enriched-ores", { type = "unlock-recipe", recipe = "enriched-alumina" })
+util.add_effect("kr-enriched-ores", { type = "unlock-recipe", recipe = "enriched-tin-plate" })
 util.add_effect("kr-enriched-ores", { type = "unlock-recipe", recipe = "dirty-water-filtration-tin" })
 end

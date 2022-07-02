@@ -105,10 +105,14 @@ if mods["space-exploration"] then
     order = "a-c-b"
   },
   })
+  util.add_effect("se-pyroflux-smelting", {type = "unlock-recipe", recipe= "molten-tin"})
+  util.add_effect("se-pyroflux-smelting", {type = "unlock-recipe", recipe= "tin-ingot"})
+  util.add_effect("se-pyroflux-smelting", {type = "unlock-recipe", recipe= "tin-ingot-to-plate"})
   util.add_effect("se-vulcanite-smelting", {type = "unlock-recipe", recipe= "molten-tin"})
   util.add_effect("se-vulcanite-smelting", {type = "unlock-recipe", recipe= "tin-ingot"})
   util.add_effect("se-vulcanite-smelting", {type = "unlock-recipe", recipe= "tin-ingot-to-plate"})
   if mods["Krastorio2"] then
+    util.set_item_subgroup("enriched-tin", "tin")
     data.raw.recipe["enriched-tin-plate"].order= "d[tin-plate]"
     se_delivery_cannon_recipes["enriched-tin"] = {name= "enriched-tin"}
   end

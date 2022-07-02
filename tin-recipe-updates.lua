@@ -5,12 +5,17 @@ local util = require("data-util");
 
 local organotins_quant = mods.Krastorio2 and 10 or 5
 util.replace_some_ingredient("plastic-bar", "petroleum-gas", organotins_quant, "organotins", organotins_quant)
+util.add_ingredient("poison-capsule", "organotins", 10)
+util.add_ingredient("slowdown-capsule", "organotins", 5)
+util.set_category("poison-capsule", "crafting-with-fluid")
+util.set_category("slowdown-capsule", "crafting-with-fluid")
 
 util.replace_some_ingredient("pipe-to-ground", "lead-plate", 3, "solder", 3)
 util.replace_some_ingredient("pipe-to-ground", "iron-plate", 3, "solder", 3)
 util.multiply_recipe("electronic-circuit", 2)
 util.replace_some_ingredient("electronic-circuit", "copper-cable", 1, "solder", 1)
 util.replace_some_ingredient("advanced-circuit", "copper-cable", 1, "solder", 1)
+util.remove_ingredient("chemical-plant", "tungsten-plate")   -- keep ingredients managable
 util.add_ingredient("chemical-plant", "solder", 5)
 util.add_ingredient("oil-refinery", "solder", 5)
 util.add_ingredient("assembling-machine-2", "solder", 5)
@@ -32,11 +37,19 @@ elseif mods["aai-industry"] then
     util.set_to_founding("glass-from-sand")
   end
 end
--- NOTE: K2 seems to reset this recipe, so moved to final fixes
+-- -- NOTE: K2 seems to reset this recipe, so moved to final fixes:
 -- util.replace_some_ingredient("se-glass-vulcanite", "sand", 1, "tin-plate", 1)
 -- util.add_product("se-glass-vulcanite", {type="item", name="tin-plate", amount=1, probability=0.8})
 -- util.set_main_product("se-glass-vulcanite", "glass")
 -- end glass
+--
+--
+
+util.add_ingredient("kr-fuel-refinery", "solder", 5)
+util.add_ingredient("kr-electrolysis-plant", "solder", 10)
+util.replace_some_ingredient("kr-steel-pipe-to-ground", "steel-plate", 3, "solder", 8)
+util.replace_ingredient("kr-biomass-growing", "petroleum-gas", "organotins")
+util.replace_ingredient("buisart-lab", "copper-cable", "tinned-cable")
 
 
 util.add_product("se-scrap-recycling", {name="tin-ore", amount=1, probability=0.05})
@@ -52,6 +65,10 @@ util.replace_some_ingredient("lithium-sulfur-battery", "copper-plate", 1, "tin-p
 
 if util.me.use_cable() then
   util.add_prerequisite("circuit-network", "tinned-cable")
+
+  util.add_ingredient("pumpjack", "tinned-cable", 5)
+
+
   util.replace_ingredient("arithmetic-combinator", "copper-cable", "tinned-cable")
   util.replace_ingredient("decider-combinator", "copper-cable", "tinned-cable")
   util.replace_ingredient("constant-combinator", "copper-cable", "tinned-cable")
