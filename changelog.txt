@@ -1,7 +1,9 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.1
-Date: 2022-07-01
+Date: 2022-07-04
   Features:
-    - Alpha release. Adds tin, solder, and other optional intermediates
+    - Alpha release. Adds tin, solder, organotins, and (optionally) tinned cable
     - Compatible with Krastorio 2
     - Compatible with Space Exploration
+    - Compatible with deadlock stacking/crating
+    - Compatible with many other mods

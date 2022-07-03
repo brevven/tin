@@ -12,14 +12,29 @@ util.set_category("slowdown-capsule", "crafting-with-fluid")
 
 util.replace_some_ingredient("pipe-to-ground", "lead-plate", 3, "solder", 3)
 util.replace_some_ingredient("pipe-to-ground", "iron-plate", 3, "solder", 3)
-util.multiply_recipe("electronic-circuit", 2)
-util.replace_some_ingredient("electronic-circuit", "copper-cable", 1, "solder", 1)
-util.replace_some_ingredient("advanced-circuit", "copper-cable", 1, "solder", 1)
 util.remove_ingredient("chemical-plant", "tungsten-plate")   -- keep ingredients managable
+
+util.replace_some_ingredient("advanced-circuit", "copper-cable", 1, "solder", 1)
 util.add_ingredient("chemical-plant", "solder", 5)
 util.add_ingredient("oil-refinery", "solder", 5)
 util.add_ingredient("assembling-machine-2", "solder", 5)
 util.add_ingredient("rocket-silo", "solder", 100)
+util.add_ingredient("accumulator", "solder", 2)
+util.add_ingredient("se-space-accumulator", "solder", 2)
+util.add_ingredient("storage-tank", "solder", 4)
+util.add_ingredient("kr-fluid-storage-1", "solder", 4)
+util.add_ingredient("kr-fluid-storage-2", "solder", 12)
+util.add_ingredient("substation", "solder", 2)
+util.add_ingredient("kr-substation-mk2", "solder", 2)
+util.add_ingredient("se-pylon-substation", "solder", 2)
+util.add_ingredient("se-pylon", "solder", 2)
+util.add_ingredient("se-holmium-solenoid", "solder", 2)
+
+-- --  Elecrontics circuit recipes are updated in final fixes:
+-- util.multiply_recipe("electronic-circuit", 2)
+-- util.replace_some_ingredient("electronic-circuit", "copper-cable", 1, "solder", 1)
+-- util.multiply_recipe("electronic-circuit-stone", 2)
+-- util.replace_some_ingredient("electronic-circuit-stone", "copper-cable", 1, "solder", 1)
 
 -- glass
 if mods.Krastorio2 then
@@ -49,7 +64,6 @@ util.add_ingredient("kr-fuel-refinery", "solder", 5)
 util.add_ingredient("kr-electrolysis-plant", "solder", 10)
 util.replace_some_ingredient("kr-steel-pipe-to-ground", "steel-plate", 3, "solder", 8)
 util.replace_ingredient("kr-biomass-growing", "petroleum-gas", "organotins")
-util.replace_ingredient("buisart-lab", "copper-cable", "tinned-cable")
 
 
 util.add_product("se-scrap-recycling", {name="tin-ore", amount=1, probability=0.05})
@@ -57,16 +71,31 @@ util.add_ingredient("se-experimental-alloys-data", "tin-plate", 1)
 util.add_to_product("se-experimental-alloys-data", "se-experimental-alloys-data", 1)
 util.add_to_product("se-experimental-alloys-data", "se-scrap", 1)
 util.add_to_ingredient("se-experimental-alloys-data", "se-empty-data", 1)
+util.add_ingredient("se-biochemical-data", "organotins", 10)
+util.add_ingredient("se-corrosion-resistance-data", "tin-plate", 1)
+
+util.add_ingredient("se-space-biochemical-laboratory", "solder", 8)
+util.add_ingredient("se-decontamination-facility", "solder", 10)
+util.add_ingredient("se-life-support-facility", "solder", 40)
 
 util.multiply_recipe("lithium-sulfur-battery", 2)
 util.replace_some_ingredient("lithium-sulfur-battery", "copper-plate", 1, "tin-plate", 1)
 
+util.add_ingredient("roboport", "solder", 20)
+util.add_ingredient("kr-large-roboport", "solder", 20)
+util.add_ingredient("kr-small-roboport", "solder", 10)
+util.add_ingredient("se-supercharger", "solder", 15)
+
 
 
 if util.me.use_cable() then
+
   util.add_prerequisite("circuit-network", "tinned-cable")
 
   util.add_ingredient("pumpjack", "tinned-cable", 5)
+
+  util.remove_ingredient("se-delivery-cannon-capsule", "copper-cable")
+  util.add_ingredient("se-delivery-cannon-capsule", "tinned-cable", 8)
 
 
   util.replace_ingredient("arithmetic-combinator", "copper-cable", "tinned-cable")
@@ -92,4 +121,8 @@ if util.me.use_cable() then
   for i, v in pairs(modded_combinators) do
     util.replace_ingredient(v, "copper-cable", "tinned-cable")
   end
+
+  -- k2
+  util.replace_ingredient("buisart-lab", "copper-cable", "tinned-cable")
+  util.replace_ingredient("energy-absorber", "copper-cable", "tinned-cable")
 end

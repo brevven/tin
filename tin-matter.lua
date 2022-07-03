@@ -35,7 +35,7 @@ data:extend(
   },
 })
 
-local flake_graphite_matter = 
+local tin_ore_matter = 
 	{
     item_name = "tin-ore",
     minimum_conversion_quantity = 10,
@@ -44,20 +44,9 @@ local flake_graphite_matter =
     need_stabilizer = false,
     unlocked_by_technology = "tin-matter-processing"
 	}
-matter.createMatterRecipe(flake_graphite_matter)
+matter.createMatterRecipe(tin_ore_matter)
 
-local graphite_matter = 
-	{
-    item_name = "alumina",
-    minimum_conversion_quantity = 10,
-    matter_value = 7.5,
-    energy_required = 2,
-    only_deconversion = true,
-    need_stabilizer = true,
-    unlocked_by_technology = "tin-matter-processing"
-	}
-matter.createMatterRecipe(graphite_matter)
-local graphite_matter = 
+local tin_plate_matter = 
 	{
     item_name = "tin-plate",
     minimum_conversion_quantity = 10,
@@ -67,5 +56,5 @@ local graphite_matter =
     need_stabilizer = true,
     unlocked_by_technology = "tin-matter-processing"
 	}
-matter.createMatterRecipe(graphite_matter)
+matter.createMatterRecipe(tin_plate_matter)
 end

@@ -40,7 +40,7 @@ data:extend({
       base_spots_per_km2 = 1,
       has_starting_area_placement = true,
       regular_rq_factor_multiplier = 1.0,
-      starting_rq_factor_multiplier = 1.3,
+      starting_rq_factor_multiplier = 1.0,
     },
 
     stage_counts = {15000, 9500, 5500, 2900, 1300, 400, 150, 80},
@@ -72,9 +72,9 @@ data:extend({
       icon = "__bztin__/graphics/icons/tin-ore.png",
       pictures = {
         {filename="__bztin__/graphics/icons/tin-ore.png", size=64, scale=0.25},
+        {filename="__bztin__/graphics/icons/tin-ore-1.png", size=64, scale=0.25},
         {filename="__bztin__/graphics/icons/tin-ore-2.png", size=64, scale=0.25},
         {filename="__bztin__/graphics/icons/tin-ore-3.png", size=64, scale=0.25},
-        {filename="__bztin__/graphics/icons/tin-ore-4.png", size=64, scale=0.25},
       },
       subgroup = "raw-resource",
       order = "t-c-a",

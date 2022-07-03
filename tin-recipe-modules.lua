@@ -3,9 +3,11 @@
 recipes = {"tin-plate", "solder", "organotins"}
 if mods["Krastorio2"] then
   table.insert(recipes, "enriched-tin")
+  table.insert(recipes, "enriched-tin-plate")
 end
 if mods["space-exploration"] then
   table.insert(recipes, "tin-smelting-vulcanite")
+  table.insert(recipes, "molten-tin")
   if mods["Krastorio2"] then
     table.insert(recipes, "enriched-tin-smelting-vulcanite")
   end

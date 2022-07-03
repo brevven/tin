@@ -3,13 +3,13 @@ local util = require("data-util");
 
 if mods["space-exploration"] then
   se_delivery_cannon_recipes["tin-ore"] = {name= "tin-ore"}
-  se_delivery_cannon_recipes[util.me.titanium_plate] = {name= util.me.titanium_plate}
+  se_delivery_cannon_recipes["tin-plate"] = {name= "tin-plate"}
   data:extend({
   {
     type = "recipe",
     icons = {
       { icon = "__base__/graphics/icons/landfill.png", icon_size = 64, icon_mipmaps = 3 },
-      { icon = "__bztitanium__/graphics/icons/tin-ore.png", icon_size = 64, scale = 0.25},
+      { icon = "__bztin__/graphics/icons/tin-ore.png", icon_size = 64, scale = 0.25},
     },
     name = "landfill-tin-ore",
     category = "hard-recycling",
@@ -33,7 +33,7 @@ if mods["space-exploration"] then
   {
     type = "item",
     name = "tin-ingot",
-    icons = {{icon = "__bztitanium__/graphics/icons/tin-ingot.png", icon_size = 128}},
+    icons = {{icon = "__bztin__/graphics/icons/tin-ingot.png", icon_size = 128}},
     order = "b-b",
     stack_size = 50,
     subgroup = "tin",
@@ -45,7 +45,7 @@ if mods["space-exploration"] then
     max_temperature = 232,
     base_color = {r=191, g=219, b=233},
     flow_color = {r=191, g=219, b=233},
-    icons = {{icon = "__bztitanium__/graphics/icons/molten-tin.png", icon_size = 128}},
+    icons = {{icon = "__bztin__/graphics/icons/molten-tin.png", icon_size = 128}},
     order = "a[molten]-a",
     pressure_to_speed_ratio = 0.4,
     flow_to_energy_ratio = 0.59,
@@ -60,7 +60,7 @@ if mods["space-exploration"] then
     results = {
       {type = "fluid", name = "molten-tin", amount = mods.Krastorio2 and 750 or 900},
     },
-    energy_required = 60,
+    energy_required = 45,
     ingredients = {
       {name = mods.Krastorio2 and "enriched-tin" or "tin-ore", amount = 24},
       {type = "fluid", name = "se-pyroflux", amount = 10},
@@ -89,8 +89,8 @@ if mods["space-exploration"] then
     name = "tin-ingot-to-plate",
 
     icons = {
-      {icon = "__bztitanium__/graphics/icons/tin-plate.png", icon_size = 64, icon_mipmaps = 3},
-      {icon = "__bztitanium__/graphics/icons/tin-ingot.png", icon_size = 128, scale = 0.25, shift = {-8, -8}},
+      {icon = "__bztin__/graphics/icons/tin-plate.png", icon_size = 128},
+      {icon = "__bztin__/graphics/icons/tin-ingot.png", icon_size = 128, scale = 0.125, shift = {-8, -8}},
     },
     results = {
       {name = "tin-plate", amount = 10},
