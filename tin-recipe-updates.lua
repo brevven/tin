@@ -41,24 +41,33 @@ if mods.Krastorio2 then
   util.replace_some_ingredient("glass", "sand", 1, "tin-plate", 1)
   util.add_product("glass", {type="item", name="tin-plate", amount=1, probability=0.8})
   util.set_main_product("glass", "glass")
-elseif mods["aai-industry"] then
+else 
   if mods.bzfoundry then
     if not mods.bzaluminum then
-      util.multiply_recipe("glass-from-sand", 4)
+      util.multiply_recipe("glass-from-sand", 4) -- aai
+      util.multiply_recipe("sng-glass-plate", 4) -- sand and glass
     end
+
+    -- aai
     util.replace_some_ingredient("glass-from-sand", "sand", 1, "tin-plate", 1)
     util.add_product("glass-from-sand", {type="item", name="tin-plate", amount=1, probability=0.8})
     util.set_main_product("glass-from-sand", "glass")
     util.set_to_founding("glass-from-sand")
+
+    -- sand and glass
+    util.replace_some_ingredient("sng-glass-plate", "sand", 1, "tin-plate", 1)
+    util.add_product("sng-glass-plate", {type="item", name="tin-plate", amount=1, probability=0.8})
+    util.set_main_product("sng-glass-plate", "sng-glass-plate")
+    util.set_to_founding("sng-glass-plate")
   end
 end
 -- -- NOTE: K2 seems to reset this recipe, so moved to final fixes:
 -- util.replace_some_ingredient("se-glass-vulcanite", "sand", 1, "tin-plate", 1)
 -- util.add_product("se-glass-vulcanite", {type="item", name="tin-plate", amount=1, probability=0.8})
 -- util.set_main_product("se-glass-vulcanite", "glass")
+--
+-- 248k in /compatibility dir
 -- end glass
---
---
 
 util.add_ingredient("kr-fuel-refinery", "solder", 5)
 util.add_ingredient("kr-electrolysis-plant", "solder", 10)
