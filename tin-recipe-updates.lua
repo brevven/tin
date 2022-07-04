@@ -73,6 +73,8 @@ util.add_to_product("se-experimental-alloys-data", "se-scrap", 1)
 util.add_to_ingredient("se-experimental-alloys-data", "se-empty-data", 1)
 util.add_ingredient("se-biochemical-data", "organotins", 10)
 util.add_ingredient("se-corrosion-resistance-data", "tin-plate", 1)
+util.replace_some_ingredient("se-superconductivity-data", "se-holmium-cable", 1, "tin-plate", 1)
+util.replace_some_ingredient("se-superconductive-cable", "se-holmium-cable", 1, "tin-plate", 1)
 
 util.add_ingredient("se-space-biochemical-laboratory", "solder", 8)
 util.add_ingredient("se-decontamination-facility", "solder", 10)
@@ -85,19 +87,24 @@ util.add_ingredient("roboport", "solder", 20)
 util.add_ingredient("kr-large-roboport", "solder", 20)
 util.add_ingredient("kr-small-roboport", "solder", 10)
 util.add_ingredient("se-supercharger", "solder", 15)
+util.replace_some_ingredient("kr-shelter", "iron-plate", 10, "tin-plate", 10)
+
+
+util.replace_some_ingredient("lab", "copper-plate", 5, "tin-plate", 5)
+util.add_ingredient("lab", "tin-plate", 5)
 
 
 
 if util.me.use_cable() then
 
-  util.add_prerequisite("circuit-network", "tinned-cable")
-
+  util.add_prerequisite("oil-processing", "tinned-cable")
   util.add_ingredient("pumpjack", "tinned-cable", 5)
 
-  util.remove_ingredient("se-delivery-cannon-capsule", "copper-cable")
+  util.remove_ingredient("se-delivery-cannon-capsule", "copper-cable") --10
   util.add_ingredient("se-delivery-cannon-capsule", "tinned-cable", 8)
 
 
+  util.add_prerequisite("circuit-network", "tinned-cable")
   util.replace_ingredient("arithmetic-combinator", "copper-cable", "tinned-cable")
   util.replace_ingredient("decider-combinator", "copper-cable", "tinned-cable")
   util.replace_ingredient("constant-combinator", "copper-cable", "tinned-cable")
