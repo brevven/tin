@@ -59,7 +59,7 @@ data:extend({
   },
 })
 
-local solder_ingredients = {{"tin-plate", 4}, {"copper-plate"}, 1}
+local solder_ingredients = {{"tin-plate", 4}, {"copper-plate", 1}}
 if mods.bzlead then
   solder_ingredients = {{"tin-plate", 3}, {"lead-plate", 2}}
 end
@@ -103,7 +103,7 @@ data:extend({
     category = "chemistry",
     subgroup = "fluid-recipes",
     order = "h[organotins]",
-    enabled = true,
+    enabled = false,
     energy_required = 5,
     ingredients = {{"tin-plate", 3}, {type="fluid", name="petroleum-gas", amount=20}},
     results = {{type="fluid", name="organotins", amount=50}},
@@ -143,7 +143,7 @@ data:extend({
     name = "tinned-cable",
     category = "crafting",
     order = "d[tinned-cable]",
-    enabled = true,
+    enabled = false,
     energy_required = 1.5,
     ingredients = {{"tin-plate", 1}, {"copper-cable", 8}},
     results = {{"tinned-cable", 8}},
@@ -164,6 +164,7 @@ data:extend({
     order = "b-b",
   },
 })
+util.add_prerequisite("tinned-cable", "copper-processing")
 end
 
 end
