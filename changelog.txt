@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.1
-Date: 2022-07-04
+Date: 2022-07-05
   Features:
     - Alpha release. Adds tin, solder, organotins, and (optionally) tinned cable
     - Compatible with Krastorio 2

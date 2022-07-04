@@ -52,13 +52,13 @@ else
     util.replace_some_ingredient("glass-from-sand", "sand", 1, "tin-plate", 1)
     util.add_product("glass-from-sand", {type="item", name="tin-plate", amount=1, probability=0.8})
     util.set_main_product("glass-from-sand", "glass")
-    util.set_to_founding("glass-from-sand")
+    util.set_category("glass-from-sand", "basic-founding")
 
     -- sand and glass
-    util.replace_some_ingredient("sng-glass-plate", "sand", 1, "tin-plate", 1)
+    util.replace_some_ingredient("sng-glass-plate", "sng-sand", 1, "tin-plate", 1)
     util.add_product("sng-glass-plate", {type="item", name="tin-plate", amount=1, probability=0.8})
     util.set_main_product("sng-glass-plate", "sng-glass-plate")
-    util.set_to_founding("sng-glass-plate")
+    util.set_category("sng-glass-plate", "basic-founding")
   end
 end
 -- -- NOTE: K2 seems to reset this recipe, so moved to final fixes:
