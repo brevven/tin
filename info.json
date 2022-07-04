@@ -8,7 +8,7 @@
     "homepage": "",
     "dependencies": [
       "base >= 1.1.0",
-      "bzfoundry",
+      "? bzfoundry",
       "? bztitanium >= 1.2.0",
       "? bzlead >= 1.2.0",
       "? bzzirconium >= 0.6.0",
