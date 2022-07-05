@@ -96,6 +96,7 @@ util.add_ingredient("roboport", "solder", 20)
 util.add_ingredient("kr-large-roboport", "solder", 20)
 util.add_ingredient("kr-small-roboport", "solder", 10)
 util.add_ingredient("se-supercharger", "solder", 15)
+util.add_ingredient("kr-filtration-plant", "solder", 4)
 util.replace_some_ingredient("kr-shelter", "iron-plate", 10, "tin-plate", 10)
 
 

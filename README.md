@@ -26,15 +26,14 @@ See changelog.txt
 
 ----
 
-Adds tin ore, tin plates, solder, organotins, and (optionall) tinned cable to the game.
+Adds tin ore, tin plates, solder, organotins, and (optionaly) tinned cable to the game.
 
-Tin is an early game resource and is slightly easier to process than other metals. This mod largely retains the vanilla feel and is not very complex on its own. If used alongside many of the other BZ mods, the game will become quite a bit more complex.
+This mod largely retains the vanilla feel and is not very complex on its own. If used alongside many of the other BZ mods, the game will become quite a bit more complex.
 
 If you want a vanilla-esque game with some tweaks, try this mod, or perhaps a less complex one like [Titanium](https://mods.factorio.com/mod/bztitanium) or [Lead](https://mods.factorio.com/mod/bzlead).
 
 ### Details
-
-Tin ore is smelted directly to aluminum plates. Most tin plates go into solder (with [https://mods.factorio.com/mod/bzlead](lead plates) if available) and organotins, an ingredient used in plastic.
+Tin is an early game resource and is slightly easier to process than other metals. It is mostly used in solder and organotins.
 
 Supported compatible mods:
 
@@ -67,8 +66,19 @@ See FAQ
 
 #### Vanilla
 
+- Pipe-to-ground (solder)
+- Electronic circuits (solder)
+- Advanced circuits (solder)
+- Plastic (organotins)
+- Combinators (tinned cable, optional)
+- Pumpjacks (tinned cable, optional)
+
 #### Krastorio 2
 
-#### Space Exploration & AAI
+- Glass (tin)
+- Some buildings (solder, tinned-cable)
 
-#### Other
+#### Space Exploration & AAI
+- Some buildings (solder)
+- Various science data
+- Some lategame recipes

@@ -8,6 +8,8 @@ util.replace_some_ingredient("se-glass-vulcanite", "sand", 1, "tin-plate", 1)
 util.add_product("se-glass-vulcanite", {type="item", name="tin-plate", amount=1, probability=0.8})
 util.set_main_product("se-glass-vulcanite", "glass")
 
+-- core mining balancing
+util.add_to_product("se-core-fragment-omni", "tin-ore", -4)
 
 
 -- Electronic circuits need final fixes
