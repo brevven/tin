@@ -22,7 +22,7 @@ See changelog.txt
 
 ## Description
 
-"The truth is  the pathetically, stupidly, inconveniently obvious truth is  helping only ourselves is bad and helping each other is good." - *Steve Basilone & Annie Mebane*
+"The truth is – the pathetically, stupidly, inconveniently obvious truth is – helping only ourselves is bad and helping each other is good." - *Steve Basilone & Annie Mebane*
 
 ----
 
