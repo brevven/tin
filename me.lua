@@ -4,7 +4,11 @@ me.name = "bztin"
 me.list = {}
 
 function me.use_cable()
-  return me.get_setting("bztin-more-intermediates") == "cable"
+  return me.get_setting("bztin-more-intermediates") == "cable" or me.use_bronze()
+end
+
+function me.use_bronze()
+  return me.get_setting("bztin-more-intermediates") == "bronze"
 end
 
 function me.get_setting(name)

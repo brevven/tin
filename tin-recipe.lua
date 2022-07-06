@@ -167,4 +167,45 @@ data:extend({
 util.add_prerequisite("tinned-cable", "copper-processing")
 end
 
+if util.me.use_bronze() then
+local bronze_i = {}
+bronze_i["copper-plate"] = 17
+bronze_i["tin-plate"] = 3
+if mods.bzaluminum then
+  bronze_i["copper-plate"] = bronze_i["copper-plate"] - 1
+  bronze_i["aluminum-plate"] = 1
+end
+ 
+data:extend({
+  {
+    type = "item",
+    name = "bronze-plate",
+    icon = "__bztin__/graphics/icons/bronze-plate.png",
+    icon_size = 128,
+    subgroup = "intermediate-product",
+    order = "b[bronze-plate]",
+    stack_size = util.get_stack_size(100),
+  },
+  {
+    type = "recipe",
+    name = "bronze-plate",
+    category = "advanced-crafting",
+    order = "d[bronze-plate]",
+    enabled = false,
+    energy_required = 60,
+    ingredients = {},
+    results = {{"bronze-plate", 20}},
+  },
+})
+for item, count in pairs(bronze_i) do
+  util.add_ingredient("bronze-plate", item, count)
+end
+if mods.bzfoundry then
+  util.add_effect("foundry", { type = "unlock-recipe", recipe = "bronze-plate" })
+  util.add_prerequisite("fast-inserter", "foundry")
+  util.set_to_founding("bronze-plate")
+else
+  util.add_effect("automation", { type = "unlock-recipe", recipe = "bronze-plate" })
+end
+end
 end

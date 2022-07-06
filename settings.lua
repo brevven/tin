@@ -17,6 +17,6 @@ data:extend({
 		name = "bztin-more-intermediates",
 		setting_type = "startup",
 		default_value = (mods.Krastorio2 or mods["space-exploration"]) and "cable" or "no",
-    allowed_values = {"cable", "no"},
+    allowed_values = {"bronze", "cable", "no"},
 	},
 })

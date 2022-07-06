@@ -143,3 +143,19 @@ if util.me.use_cable() then
   util.replace_ingredient("buisart-lab", "copper-cable", "tinned-cable")
   util.replace_ingredient("energy-absorber", "copper-cable", "tinned-cable")
 end
+
+if util.me.use_bronze() then
+  local fast_i = mods.bzaluminum and "aluminum-plate" or "iron-plate"
+  util.replace_some_ingredient("fast-inserter", fast_i, 1, "bronze-plate", 1)
+  if mods.Krastorio2 then
+    util.replace_some_ingredient("filter-inserter", fast_i, 1, "bronze-plate", 1)
+    util.replace_ingredient("kr-steel-pump", "steel-beam", "bronze-plate", 4)
+  end
+
+  util.replace_ingredient("pump", "steel-plate", "bronze-plate", 2)
+  util.replace_ingredient("storage-tank", "steel-plate", "bronze-plate", 10)
+
+  util.add_ingredient("electric-engine-unit", "bronze-plate", 1)
+
+  util.replace_some_ingredient("se-heavy-bearing", "se-iridium-plate", 1, "bronze-plate", 1)
+end
