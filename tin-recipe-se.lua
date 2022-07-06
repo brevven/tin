@@ -20,6 +20,7 @@ if mods["space-exploration"] then
   }
   })
 
+if string.sub(mods["space-exploration"], 1, 3) == "0.6" then
   data:extend({
   {
     type = "item-subgroup",
@@ -116,4 +117,65 @@ if mods["space-exploration"] then
     data.raw.recipe["enriched-tin-plate"].order= "d[tin-plate]"
     se_delivery_cannon_recipes["enriched-tin"] = {name= "enriched-tin"}
   end
+else
+  data.raw.item["tin-plate"].subgroup = "plates"
+  if mods["Krastorio2"] then
+
+    data:extend({
+    {
+      type = "recipe",
+      name = "enriched-tin-smelting-vulcanite",
+      category = "smelting",
+      order = "d[tin-plate]",
+      energy_required = 18,
+      enabled = false,
+      always_show_made_in = true,
+      allow_as_intermediate = false,
+      ingredients = {
+        {name = "enriched-tin", amount = 8},
+        {name = "se-vulcanite-block", amount = 1},
+      },
+      results = {
+        {name = "tin-plate", amount = 12},
+      },
+      icons =
+      {
+        { icon = "__bztin__/graphics/icons/tin-plate.png", icon_size = 128},
+        { icon = "__space-exploration-graphics__/graphics/icons/vulcanite-block.png", icon_size = 64, scale=0.25, shift= {-10, -10}},
+      },
+    },
+    })
+    table.insert(data.raw.technology["se-processing-vulcanite"].effects, 
+        {type = "unlock-recipe", recipe= "enriched-tin-smelting-vulcanite"})
+    data.raw.recipe["enriched-tin-plate"].order= "d[tin-plate]"
+    se_delivery_cannon_recipes["enriched-tin"] = {name= "enriched-tin"}
+  else
+    data:extend({
+    {
+      type = "recipe",
+      name = "tin-smelting-vulcanite",
+      category = "smelting",
+      order = "d[tin-plate]",
+      energy_required = 18,
+      enabled = false,
+      always_show_made_in = true,
+      allow_as_intermediate = false,
+      ingredients = {
+        {name = "tin-ore", amount = 8},
+        {name = "se-vulcanite-block", amount = 1},
+      },
+      results = {
+        {name = "tin-plate", amount = 12},
+      },
+      icons =
+      {
+        { icon = "__bztin__/graphics/icons/tin-plate.png", icon_size = 128},
+        { icon = "__space-exploration-graphics__/graphics/icons/vulcanite-block.png", icon_size = 64, scale=0.25, shift= {-10, -10}},
+      },
+    },
+    })
+    table.insert(data.raw.technology["se-processing-vulcanite"].effects, 
+        {type = "unlock-recipe", recipe= "tin-smelting-vulcanite"})
+  end
+end
 end

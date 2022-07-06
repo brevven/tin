@@ -1,6 +1,6 @@
 {
     "name": "bztin",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "factorio_version": "1.1",
     "title": "Tin",
     "author": "Brevven",
@@ -14,7 +14,7 @@
       "? bzzirconium >= 0.6.0",
       "? bztungsten >= 0.6.0",
       "? bzcarbon >= 0.3.0",
-      "? space-exploration >= 0.6.0",
+      "? space-exploration >= 0.5.100",
       "? aai-industry",
       "? Krastorio2",
       "? sand-and-glass",

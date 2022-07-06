@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.2
+Date: 2022-07-06
+  Features:
+    - Compatible with both Space Exploration 0.5 and 0.6. Compatibility with SE 0.5 will likely not
+      be as up to date, and will eventually not be supported after a few months.
+---------------------------------------------------------------------------------------------------
 Version: 0.0.1
 Date: 2022-07-05
   Features:
