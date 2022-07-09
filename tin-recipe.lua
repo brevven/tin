@@ -107,6 +107,12 @@ data:extend({
     energy_required = 5,
     ingredients = {{"tin-plate", 3}, {type="fluid", name="petroleum-gas", amount=20}},
     results = {{type="fluid", name="organotins", amount=50}},
+    crafting_machine_tint = {
+      primary = {r = 1.000, g = 0.995, b = 0.089, a = 1.000}, 
+      secondary = {r = 1.000, g = 0.975, b = 0.890, a = 1.000}, 
+      tertiary = {r = 0.825, g = 0.740, b = 0.810, a = 1.000}, 
+      quaternary = {r = 0.950, g = 1.000, b = 0.350, a = 1.000}, 
+    }
   },
   {
     type = "technology",
