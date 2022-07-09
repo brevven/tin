@@ -200,7 +200,7 @@ data:extend({
 for item, count in pairs(bronze_i) do
   util.add_ingredient("bronze-plate", item, count)
 end
-if mods.bzfoundry then
+if mods.bzfoundry and data.raw.item["foundry"] then
   util.add_effect("foundry", { type = "unlock-recipe", recipe = "bronze-plate" })
   util.add_prerequisite("fast-inserter", "foundry")
   util.set_to_founding("bronze-plate")
