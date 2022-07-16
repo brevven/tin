@@ -39,7 +39,7 @@ util.add_ingredient("se-holmium-solenoid", "solder", 2)
 -- glass
 if mods.Krastorio2 then
   util.replace_some_ingredient("glass", "sand", 1, "tin-plate", 1)
-  util.add_product("glass", {type="item", name="tin-plate", amount=1, probability=0.8})
+  util.add_product("glass", {type="item", name="tin-plate", amount=1, catalyst_amount=1, probability=0.8})
   util.set_main_product("glass", "glass")
 else 
   if mods.bzfoundry then
@@ -50,13 +50,13 @@ else
 
     -- aai
     util.replace_some_ingredient("glass-from-sand", "sand", 1, "tin-plate", 1)
-    util.add_product("glass-from-sand", {type="item", name="tin-plate", amount=1, probability=0.8})
+    util.add_product("glass-from-sand", {type="item", name="tin-plate", amount=1, catalyst_amount=1, probability=0.8})
     util.set_main_product("glass-from-sand", "glass")
     util.set_category("glass-from-sand", "basic-founding")
 
     -- sand and glass
     util.replace_some_ingredient("sng-glass-plate", "sng-sand", 1, "tin-plate", 1)
-    util.add_product("sng-glass-plate", {type="item", name="tin-plate", amount=1, probability=0.8})
+    util.add_product("sng-glass-plate", {type="item", name="tin-plate", amount=1, catalyst_amount=1, probability=0.8})
     util.set_main_product("sng-glass-plate", "sng-glass-plate")
     util.set_category("sng-glass-plate", "basic-founding")
   end

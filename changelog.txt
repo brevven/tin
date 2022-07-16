@@ -4,6 +4,7 @@ Date: 2022-07-16
   Changes:
     - Machine coloring tweaks
   Fixes:
+    - K2, AAI, 248k etc: Tin in glass recipes no longer affected by productivity
     - (minor) ordering of solder item
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.4
