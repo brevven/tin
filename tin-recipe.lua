@@ -70,7 +70,7 @@ data:extend({
     icon = "__bztin__/graphics/icons/solder.png",
     icon_size = 128,
     subgroup = "intermediate-product",
-    order = "b[acsr-cable]",
+    order = "b[solder]",
     stack_size = util.get_stack_size(100),
   },
   {
