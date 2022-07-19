@@ -17,4 +17,6 @@ See changelog.txt
 
 ### Localization
 
+- [Pergamum663](https://github.com/Pergamum663) (ru)
+
 
