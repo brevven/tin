@@ -7,5 +7,10 @@ require("compatibility/248k")
 
 local util = require("data-util");
 
+if mods.Asteroid_Mining then
+  require("__Asteroid_Mining__.scripts.addmodule")
+  amfunc.addtype("tin-ore", {a = 0,r = 0.55,g = 0.45,b = 0.3})
+end
+
 -- Must be last
 util.create_list()
