@@ -140,7 +140,7 @@ data:extend({
     name = "tinned-cable",
     icon = "__bztin__/graphics/icons/tinned-cable.png",
     icon_size = 64, icon_mipmaps = 4,
-    subgroup = "intermediate-product",
+    subgroup = util.cablesg,
     order = "b[tinned-cable]",
     stack_size = util.get_stack_size(100),
   },

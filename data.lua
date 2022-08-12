@@ -1,3 +1,4 @@
+require("cables")
 require("tin-ore")
 require("tin-recipe")
 require("tin-enriched")   -- Enriched Al for Krastorio 2
