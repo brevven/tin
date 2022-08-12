@@ -13,7 +13,6 @@ See changelog.txt
 
 ## Thanks to 
 - [snouz](https://github.com/snouz) (logo inspiration, ore graphics templates)
-- https://www.flickr.com/photos/free-stock/6837291528/ for beta solder icon (modified from public domain image)
 
 ### Localization
 
