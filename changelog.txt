@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.2
+Date: 2022-08-05
+  Fixes:
+    - When bypass setting is used with recipes with altered outputs (eg. Glass with Foundry or K2),
+      the outputs will now, correctly, not be altered. A similar fix will go out to other BZ mods
+      over the coming days/weeks.
+---------------------------------------------------------------------------------------------------
 Version: 0.1.1
 Date: 2022-08-05
   Features:
