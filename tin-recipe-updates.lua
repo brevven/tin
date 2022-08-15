@@ -159,3 +159,9 @@ if util.me.use_bronze() then
 
   util.replace_some_ingredient("se-heavy-bearing", "se-iridium-plate", 1, "bronze-plate", 1)
 end
+
+
+if mods.bztungsten and not mods.bzaluminum then
+  util.replace_ingredient("small-lamp", "copper-cable", "tinned-cable")
+  util.add_prerequisite("optics", "tinned-cable")
+end
