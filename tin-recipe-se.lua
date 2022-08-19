@@ -4,23 +4,10 @@ local util = require("data-util");
 if mods["space-exploration"] then
   se_delivery_cannon_recipes["tin-ore"] = {name= "tin-ore"}
   se_delivery_cannon_recipes["tin-plate"] = {name= "tin-plate"}
-  data:extend({
-  {
-    type = "recipe",
-    icons = {
-      { icon = "__base__/graphics/icons/landfill.png", icon_size = 64, icon_mipmaps = 3 },
-      { icon = "__bztin__/graphics/icons/tin-ore.png", icon_size = 64, scale = 0.25},
-    },
-    name = "landfill-tin-ore",
-    category = "hard-recycling",
-    order = "z-b-tin",
-    subgroup = "terrain",
-    result = "landfill",
-    ingredients = {{"tin-ore", 50}},
-  }
-  })
+  util.se_landfill({ore="tin-ore"})
 
 if string.sub(mods["space-exploration"], 1, 3) == "0.6" then
+  util.se_matter({ore="tin-ore", energy_required=1, quant_out=10, stream_out=60})
   data:extend({
   {
     type = "item-subgroup",

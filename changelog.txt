@@ -1,9 +1,11 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.4
-Date: 2022-08-12
+Date: 2022-08-16
   Changes:
     - In some very specific mod loadouts, tinned cable used in lamps
     - Stacked solder icon updated, too
+  Features:
+    - Support for SE matter fusion and SE+K2 matter liberation
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.3
 Date: 2022-08-10
