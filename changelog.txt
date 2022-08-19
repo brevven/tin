@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.5
+Date: 2022-08-17
+  Fixes:
+    - SE: Disable matter recipes at start
+  Changes:
+    - Compatibility with bob's assembling machines 
+    - Compatibility with Renai Transportation inserters
+---------------------------------------------------------------------------------------------------
 Version: 0.1.4
 Date: 2022-08-16
   Changes:

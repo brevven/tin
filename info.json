@@ -1,6 +1,6 @@
 {
     "name": "bztin",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "factorio_version": "1.1",
     "title": "Tin",
     "author": "Brevven",
@@ -14,12 +14,14 @@
       "? bzzirconium >= 0.6.0",
       "? bztungsten >= 0.6.0",
       "? bzcarbon >= 0.3.0",
+      "? bzaluminum >= 0.4.9",
       "? space-exploration >= 0.5.100",
       "? aai-industry",
       "? Krastorio2",
       "? sand-and-glass",
       "? deadlock-beltboxes-loaders",
-      "? DeadlockCrating"
+      "? DeadlockCrating",
+      "(?) RenaiTransportation"
     ],
     "description": "Adds tin, solder and more to the base game.\n\nCompatible with Krastorio 2 and Space Exploration. A standalone piece of BZ Mods."
 }

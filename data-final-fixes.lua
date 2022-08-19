@@ -19,5 +19,16 @@ util.replace_some_ingredient("electronic-circuit-stone", "copper-cable", 1, "sol
 util.multiply_recipe("electronic-circuit", 2)
 util.replace_some_ingredient("electronic-circuit", "copper-cable", 1, "solder", 1)
 
+if mods.RenaiTransportation then
+  for i, recipe in pairs(data.raw.recipe) do
+    if recipe.result and data.raw.item[recipe.result] and
+    data.raw.item[recipe.result].subgroup == "throwers" and
+    recipe.result ~= "RTThrower-burner-inserter"
+    then
+      util.add_ingredient(recipe.name, "bronze-plate", 1)
+    end
+  end
+end
+
 -- Must be last
 util.create_list()

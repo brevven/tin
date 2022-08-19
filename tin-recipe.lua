@@ -177,10 +177,6 @@ if util.me.use_bronze() then
 local bronze_i = {}
 bronze_i["copper-plate"] = 17
 bronze_i["tin-plate"] = 3
-if mods.bzaluminum then
-  bronze_i["copper-plate"] = bronze_i["copper-plate"] - 1
-  bronze_i["aluminum-plate"] = 1
-end
  
 data:extend({
   {
@@ -204,12 +200,12 @@ data:extend({
   },
 })
 for item, count in pairs(bronze_i) do
-  util.add_ingredient("bronze-plate", item, count)
+  util.add_ingredient("bronze-plate", item, count, {force=true})
 end
 if mods.bzfoundry and data.raw.item["foundry"] then
   util.add_effect("foundry", { type = "unlock-recipe", recipe = "bronze-plate" })
   util.add_prerequisite("fast-inserter", "foundry")
-  util.set_to_founding("bronze-plate")
+  util.set_to_founding("bronze-plate", {force=true})
 else
   util.add_effect("automation", { type = "unlock-recipe", recipe = "bronze-plate" })
 end

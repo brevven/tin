@@ -165,3 +165,9 @@ if mods.bztungsten and not mods.bzaluminum then
   util.replace_ingredient("small-lamp", "copper-cable", "tinned-cable")
   util.add_prerequisite("optics", "tinned-cable")
 end
+
+if mods.bobassembly then
+  util.add_ingredient("steam-assembling-machine", "solder", 1)
+  util.add_ingredient("fluid-furnace", "solder", 1)
+  util.add_ingredient("chemical-plant-2", "solder", 1)
+end
