@@ -85,6 +85,29 @@ data:extend({
   }
 })
 
+if mods.bzaluminum and not mods.bzlead then
+  data:extend({
+  {
+    type = "technology",
+    name = "solder",
+    icon = "__bztin__/graphics/icons/solder.png",
+    icon_size = 128,
+    effects = {
+      { type = "unlock-recipe", recipe = "solder" },
+      { type = "unlock-recipe", recipe = "pipe-to-ground" },
+    },
+    unit = {
+      count = 10, time = 15,
+      ingredients = {{"automation-science-pack", 1}},
+    },
+    prerequisites = {"copper-processing"},
+  },
+  })
+  util.add_unlock_force("solder", "pipe-to-ground")
+  util.add_unlock_force("solder", "solder")
+  util.add_prerequisite("electronics", "solder")
+end
+
 data:extend({
   {
     type = "fluid",

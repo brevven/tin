@@ -10,8 +10,7 @@ util.add_ingredient("slowdown-capsule", "organotins", 5)
 util.set_category("poison-capsule", "crafting-with-fluid")
 util.set_category("slowdown-capsule", "crafting-with-fluid")
 
-util.replace_some_ingredient("pipe-to-ground", "lead-plate", 3, "solder", 3)
-util.replace_some_ingredient("pipe-to-ground", "iron-plate", 3, "solder", 3)
+util.replace_ingredient("pipe-to-ground", mods.bzlead and "lead-plate" or "iron-plate", "solder", 4)
 util.remove_ingredient("chemical-plant", "tungsten-plate")   -- keep ingredients managable
 
 util.replace_some_ingredient("advanced-circuit", "copper-cable", 1, "solder", 1)
@@ -158,6 +157,7 @@ if util.me.use_bronze() then
   util.add_ingredient("electric-engine-unit", "bronze-plate", 1)
 
   util.replace_some_ingredient("se-heavy-bearing", "se-iridium-plate", 1, "bronze-plate", 1)
+
 end
 
 
