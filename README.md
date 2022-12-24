@@ -19,5 +19,6 @@ See changelog.txt
 - [Pergamum663](https://github.com/Pergamum663) (ru)
 - [RiCZrd](https://mods.factorio.com/user/RiCZrd) (cs)
 - [Sakuro](https://github.com/sakuro) (ja)
+- [sunnytan53](https://github.com/sunnytan53) (zh-CN)
 
 
