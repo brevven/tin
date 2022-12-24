@@ -11,7 +11,6 @@ util.set_main_product("se-glass-vulcanite", "glass")
 -- core mining balancing
 util.add_to_product("se-core-fragment-omni", "tin-ore", -4)
 
-
 -- Electronic circuits need final fixes
 util.multiply_recipe("electronic-circuit-stone", 2)
 util.replace_some_ingredient("electronic-circuit-stone", "copper-cable", 1, "solder", 1)

@@ -94,7 +94,6 @@ if mods.bzaluminum and not mods.bzlead then
     icon_size = 128,
     effects = {
       { type = "unlock-recipe", recipe = "solder" },
-      { type = "unlock-recipe", recipe = "pipe-to-ground" },
     },
     unit = {
       count = 10, time = 15,
@@ -103,9 +102,17 @@ if mods.bzaluminum and not mods.bzlead then
     prerequisites = {"copper-processing"},
   },
   })
-  util.add_unlock_force("solder", "pipe-to-ground")
   util.add_unlock_force("solder", "solder")
   util.add_prerequisite("electronics", "solder")
+  if mods["aai-industry"] or mods.Krastorio2 then
+    util.add_prerequisite("basic-fluid-handling", "solder")
+    util.add_prerequisite("kr-basic-fluid-handling", "solder")
+  else
+    util.add_unlock_force("solder", "pipe-to-ground")
+  end
+  if mods.Krastorio2 then
+    util.set_tech_recipe("solder", {{"basic-tech-card", 1}})
+  end
 end
 
 data:extend({

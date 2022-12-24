@@ -16,6 +16,7 @@
       "? bzcarbon >= 0.3.0",
       "? bzaluminum >= 0.4.9",
       "? space-exploration >= 0.5.100",
+      "(?) aai-industry",
       "? aai-industry",
       "? Krastorio2",
       "? sand-and-glass",
