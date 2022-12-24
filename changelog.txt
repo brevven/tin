@@ -3,7 +3,9 @@ Version: 0.1.6
 Date: 2022-08-19
   Changes:
     - When used with Aluminum but not Lead, add new solder tech after copper-processing.
-    - Minor recipe tweaks, including simpler pipe to ground 
+    - Minor recipe tweaks, including simpler pipe to ground recipe
+  Localization:
+    - ja, thanks to Sakuro
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.5
 Date: 2022-08-17
