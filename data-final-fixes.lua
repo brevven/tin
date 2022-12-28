@@ -12,10 +12,16 @@ util.set_main_product("se-glass-vulcanite", "glass")
 util.add_to_product("se-core-fragment-omni", "tin-ore", -4)
 
 -- Electronic circuits need final fixes
-util.multiply_recipe("electronic-circuit-stone", 2)
+local amt_ec = util.get_amount("electronic-circuit-stone", "electronic-circuit")
+if amt_ec == 1 then
+  util.multiply_recipe("electronic-circuit-stone", 2)
+end
 util.replace_some_ingredient("electronic-circuit-stone", "copper-cable", 1, "solder", 1)
 
-util.multiply_recipe("electronic-circuit", 2)
+amt_ec = util.get_amount("electronic-circuit")
+if amt_ec == 1 then
+  util.multiply_recipe("electronic-circuit", 2)
+end
 util.replace_some_ingredient("electronic-circuit", "copper-cable", 1, "solder", 1)
 
 if mods.RenaiTransportation then
