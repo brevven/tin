@@ -5,6 +5,7 @@ require("map-gen-preset-updates")
 require("strange-matter")
 require("compatibility/248k")
 require("compatibility/sciencecosttweakerm")
+require("compatibility/crafting-efficiency")
 require("tin-recipe-modules")
 
 local util = require("data-util");

@@ -2,6 +2,13 @@ local me = {}
 
 me.name = "bztin"
 me.list = {}
+me.recipes = {"tin-plate", "solder", "organotins",
+              "enriched-tin",
+              "enriched-tin-plate",
+              "tin-smelting-vulcanite",
+              "molten-tin",
+              "enriched-tin-smelting-vulcanite",}
+
 
 function me.use_cable()
   if me.get_setting("bz-all-intermediates") then return true end
