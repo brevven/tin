@@ -10,15 +10,15 @@ if mods["crafting-efficiency-2"] then
     if data.raw.recipe[recipe] and (data.raw.item[recipe] or data.raw.fluid[recipe])
     and not eff_data[recipe] then
       local research_level = 1
-	  if not data.raw.recipe[recipe].enabled then
-		  for tech, tbl in pairs(data.raw.technology) do
-			  for _, effect in pairs(tbl.effects or {}) do
-				  if effect.type == "unlock-recipe" and effect.recipe == recipe then
-					  research_level = math.min(#tbl.unit.ingredients, 6)
-				  end
-			  end
-		  end
-	  end
+      if not data.raw.recipe[recipe].enabled then
+        for tech, tbl in pairs(data.raw.technology) do
+          for _, effect in pairs(tbl.effects or {}) do
+            if effect.type == "unlock-recipe" and effect.recipe == recipe then
+              research_level = math.min(#tbl.unit.ingredients, 6)
+            end
+          end
+        end
+      end
       eff_data[recipe] = {
         max = 15,
         icon = util.get_item_or_fluid_icon(recipe),
