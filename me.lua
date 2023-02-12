@@ -7,7 +7,7 @@ me.recipes = {"tin-plate", "solder", "organotins",
               "enriched-tin-plate",
               "tin-smelting-vulcanite",
               "molten-tin",
-              "enriched-tin-smelting-vulcanite", "bronze-plate", "tinned-cable"}
+              "enriched-tin-smelting-vulcanite"}
 
 
 function me.use_cable()
