@@ -14,6 +14,9 @@ See changelog.txt
 ## Thanks to 
 - [snouz](https://github.com/snouz) (logo inspiration, ore graphics templates)
 
+### Compatibility
+- [nihilistzsche](https://github.com/nihilistzsche)
+
 ### Localization
 
 - [Pergamum663](https://github.com/Pergamum663) (ru)
