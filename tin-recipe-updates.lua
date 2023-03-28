@@ -74,7 +74,7 @@ util.replace_some_ingredient("kr-steel-pipe-to-ground", "steel-plate", 3, "solde
 util.replace_ingredient("kr-biomass-growing", "petroleum-gas", "organotins")
 
 
-util.add_product("se-scrap-recycling", {name="tin-ore", amount=1, probability=0.05})
+util.add_product("se-scrap-recycling", {type="item", name="tin-ore", amount=1, probability=0.05})
 util.add_ingredient("se-experimental-alloys-data", "tin-plate", 1)
 util.add_to_product("se-experimental-alloys-data", "se-experimental-alloys-data", 1)
 util.add_to_product("se-experimental-alloys-data", "se-scrap", 1)
