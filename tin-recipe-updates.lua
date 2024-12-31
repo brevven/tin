@@ -1,6 +1,21 @@
 local util = require("data-util");
 
 
+-- Space Age
+
+if mods.bzlead and data.raw.item["lead-expansion-bolt"] then
+  util.replace_product("scrap-recycling", "lead-expansion-bolt", "solder")
+else
+  util.add_product("scrap-recycling", util.item("solder", 1, .01))
+end
+
+if mods.bztitanium then
+  util.replace_ingredient("superconductor", "titanium-plate", "tin-plate")
+else
+  util.add_ingredient("superconductor", "tin-plate", 1)
+end
+
+
 -- Main vanilla changes
 
 local organotins_quant = mods.Krastorio2 and 10 or 5
@@ -106,7 +121,7 @@ util.add_ingredient("lab", "tin-plate", 5)
 
 if util.me.use_cable() then
 
-  util.add_prerequisite("oil-processing", "tinned-cable")
+  util.add_prerequisite("oil-gathering", "tinned-cable")
   util.add_ingredient("pumpjack", "tinned-cable", 5)
 
   util.remove_ingredient("se-delivery-cannon-capsule", "copper-cable") --10
@@ -119,6 +134,7 @@ if util.me.use_cable() then
   util.replace_ingredient("constant-combinator", "copper-cable", "tinned-cable")
   util.replace_ingredient("power-switch", "copper-cable", "tinned-cable")
   util.replace_ingredient("programmable-speaker", "copper-cable", "tinned-cable")
+  util.replace_ingredient("beacon", "copper-cable", "tinned-cable")
 
   local modded_combinators = {"timer-combinator", "counting-combinator", "random-combinator",
     "power-combinator", "max-combinator", "min-combinator", "and-gate-combinator",
@@ -144,6 +160,11 @@ if util.me.use_cable() then
 end
 
 if util.me.use_bronze() then
+  util.add_ingredient("recycler", "bronze-plate", 10)
+  util.add_ingredient("maraxsis-diesel-submarine", "bronze-plate", 10)
+  util.add_ingredient("maraxsis-nuclear-submarine", "bronze-plate", 10)
+  util.add_ingredient("maraxsis-salt-reactor", "bronze-plate", 10)
+  util.add_ingredient("maraxsis-hydro-plant", "bronze-plate", 10)
   local fast_i = mods.bzaluminum and "aluminum-plate" or "iron-plate"
   util.replace_some_ingredient("fast-inserter", fast_i, 1, "bronze-plate", 1)
   if mods.Krastorio2 then

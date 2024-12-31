@@ -18,35 +18,33 @@ data:extend({
           { icon = "__bztin__/graphics/icons/tin-plate.png", icon_size = 128},
         }
 ),
-    normal = (mods["Krastorio2"] and
-        {
-          main_product = "tin-plate",
-          enabled = true,
-          energy_required = 12,
-          ingredients = {{"tin-ore", 10}},
-          results = {
-            {type="item", name = "tin-plate", amount=5}
-          }
-        } or
-        {
+    -- (mods["Krastorio2"] and
+    --    {
+    --      main_product = "tin-plate",
+    --      enabled = true,
+    --      energy_required = 12,
+    --      ingredients = {{"tin-ore", 10}},
+    --      results = {
+    --        {type="item", name = "tin-plate", amount=5}
+    --      }
+    --    } or
           main_product = "tin-plate",
           enabled = true,
           energy_required = 2.4,
-          ingredients = {{"tin-ore", 1}},
+          ingredients = {util.item("tin-ore", 1)},
           results = {
             {type="item", name = "tin-plate", amount=1}
-          }
-        }),
-    expensive =
-    {
-      main_product = "tin-plate",
-      enabled = true,
-      energy_required = 4.8,
-      ingredients = {{"tin-ore", 1}},
-      results = {
-        {type="item", name = "tin-plate", amount=1},
-      }
-    }
+          },
+    -- expensive =
+    -- {
+    --   main_product = "tin-plate",
+    --   enabled = true,
+    --   energy_required = 4.8,
+    --   ingredients = {{"tin-ore", 1}},
+    --   results = {
+    --     {type="item", name = "tin-plate", amount=1},
+    --   }
+    -- }
   },
   {
     type = "item",
@@ -59,9 +57,9 @@ data:extend({
   },
 })
 
-local solder_ingredients = {{"tin-plate", 4}, {"copper-plate", 1}}
+local solder_ingredients = {util.item("tin-plate", 4), util.item("copper-plate", 1)}
 if mods.bzlead then
-  solder_ingredients = {{"tin-plate", 3}, {"lead-plate", 2}}
+  solder_ingredients = {util.item("tin-plate", 3), util.item("lead-plate", 2)}
 end
 data:extend({
   {
@@ -81,7 +79,7 @@ data:extend({
     enabled = true,
     energy_required = 1,
     ingredients = solder_ingredients, 
-    results = {{"solder", 4}},
+    results = {util.item("solder", 4)},
   }
 })
 
@@ -120,7 +118,7 @@ data:extend({
     type = "fluid",
     name = "organotins",
     default_temperature = 25,
-    heat_capacity = "0.1KJ",
+    heat_capacity = "0.1kJ",
     base_color = {r=0.75, g=0.65, b=0.1},
     flow_color = {r=0.7, g=1, b=0.1},
     icon = "__bztin__/graphics/icons/organotins.png",
@@ -135,7 +133,7 @@ data:extend({
     order = "h[organotins]",
     enabled = false,
     energy_required = 5,
-    ingredients = {{"tin-plate", 3}, {type="fluid", name="petroleum-gas", amount=20}},
+    ingredients = {util.item("tin-plate", 3), {type="fluid", name="petroleum-gas", amount=20}},
     results = {{type="fluid", name="organotins", amount=50}},
     crafting_machine_tint = {
       primary = {r = 1.000, g = 0.995, b = 0.089, a = 1.000}, 
@@ -181,8 +179,8 @@ data:extend({
     order = "d[tinned-cable]",
     enabled = false,
     energy_required = 1.5,
-    ingredients = {{"tin-plate", 1}, {"copper-cable", 8}},
-    results = {{"tinned-cable", 8}},
+    ingredients = {util.item("tin-plate", 1), util.item("copper-cable", 8)},
+    results = {util.item("tinned-cable", 8)},
   },
   {
     type = "technology",
@@ -226,7 +224,7 @@ data:extend({
     enabled = false,
     energy_required = 60,
     ingredients = {},
-    results = {{"bronze-plate", 20}},
+    results = {util.item("bronze-plate", 20)},
   },
 })
 for item, count in pairs(bronze_i) do
@@ -240,4 +238,236 @@ else
   util.add_effect("automation", { type = "unlock-recipe", recipe = "bronze-plate" })
 end
 end
+if mods["space-age"] then
+data:extend({
+  {
+    type = "fluid",
+    name = "tin-sulfides",
+    icons = {{ icon="__base__/graphics/icons/fluid/steam.png", icon_size=64, tint={r=.9, g=.9, b=.1, a=.7}}},
+    subgroup = "fluid",
+    order = "b[new-fluid]-b[vulcanus]-t[tin-sulfides]",
+    default_temperature = 315,
+    max_temperature = 2000,
+    gas_temperature = 300,
+    heat_capacity = ".1kJ",
+    base_color = {1,1,0},
+    flow_color = {.95,.99,.1},
+  },
+  {
+    type = "recipe",
+    name = "tin-sulfides",
+    subgroup = "vulcanus-processes",
+    category = "chemistry",
+    main_product = "tin-sulfides",
+    allow_productivity = true,
+    energy_required = 1,
+    ingredients = {
+      util.fluid("steam", 10),
+      util.fluid("sulfuric-acid", 20),
+    },
+    results = {
+      util.fluid("tin-sulfides", 20),
+      util.fluid("sulfuric-acid", 10),
+    },
+    surface_conditions =
+    {
+      {
+        property = "pressure",
+        min = 4000,
+        max = 4000
+      }
+    },
+  },
+  {
+    type = "recipe",
+    name = "tin-sulfide-processing",
+    subgroup = "vulcanus-processes",
+    category = "chemistry",
+    main_product = "tin-ore",
+    allow_productivity = true,
+    energy_required = 2,
+    icons = {
+      { icon="__bztin__/graphics/icons/tin-ore.png", icon_size=64},
+      { icon="__base__/graphics/icons/fluid/steam.png", icon_size=64, tint={r=.9, g=.9, b=.1, a=.7}, scale=0.5, shift={-8,-8}},
+    },
+    ingredients = mods.bztitanium and {
+      util.fluid("tin-sulfides", 40),
+      util.fluid("vacuum", 1),
+    } or {
+      util.fluid("tin-sulfides", 40),
+    },
+    results = {
+      util.item("tin-ore", 2),
+      util.item("sulfur", 1),
+    }
+  },
+  {
+    type = "fluid",
+    name = "molten-tin",
+    icon = "__bztin__/graphics/icons/molten-tin-sa.png",
+    subgroup = "fluid",
+    order = "b[new-fluid]-b[vulcanus]-d[molten-tin]",
+    default_temperature = 1500,
+    max_temperature = 2000,
+    heat_capacity = "0.01kJ",
+    base_color = {.6, 0.4, 0.23},
+    flow_color = {0.6, 0.4, 0.23},
+    auto_barrel = false
+  },
+  {
+    type = "recipe",
+    name = "molten-tin",
+    category = "metallurgy",
+    subgroup = "vulcanus-processes",
+    order = "a[melting]-d[molten-tin]",
+    auto_recycle = false,
+    enabled = false,
+    ingredients =
+    {
+      {type = "item", name = "tin-ore", amount = 100},
+      {type = "item", name = "calcite", amount = 1},
+    },
+    energy_required = 48,
+    results = {{type = "fluid", name = "molten-tin", amount = 1000}},
+    allow_productivity = true,
+    hide_from_signal_gui = false,
+    main_product =  "molten-tin",
+  },
+  {
+    type = "recipe",
+    name = "casting-tin",
+    category = "metallurgy",
+    subgroup = "vulcanus-processes",
+    order = "b[casting]-d[casting-tin]",
+    icons = {
+      {icon = "__bztin__/graphics/icons/tin-plate.png", icon_size = 128, shift={-4,4}},
+      {icon = "__bztin__/graphics/icons/molten-tin-sa.png", icon_size = 64, shift={4,-4}},
+    },
+    enabled = false,
+    ingredients =
+    {
+      {type = "fluid", name = "molten-tin", amount = 20, fluidbox_multiplier = 10},
+    },
+    energy_required = 2.4,
+    allow_decomposition = false,
+    results = {{type = "item", name = "tin-plate", amount = 2}},
+    allow_productivity = true
+  },
+  
+})
+util.add_unlock("foundry", "casting-tin")
+util.add_unlock("foundry", "molten-tin")
+util.add_unlock("foundry", "tin-sulfides")
+util.add_unlock("foundry", "tin-sulfide-processing")
+local space_age_item_sounds = require("__space-age__.prototypes.item_sounds")
+
+data:extend({
+  {
+    type = "item",
+    name = "jellyskin",
+    icon = "__bztin__/graphics/icons/jellyskin.png",
+    icon_size = 64,
+    subgroup = "agriculture-processes",
+    order = "b[agriulture]-d[tin]",
+    stack_size = util.get_stack_size(100),
+    spoil_result = "spoilage",
+    spoil_ticks = 54000,
+    fuel_category = "chemical",
+    fuel_value = "1MJ",
+    inventory_move_sound = space_age_item_sounds.agriculture_inventory_move,
+    pick_sound = space_age_item_sounds.agriculture_inventory_pickup,
+    drop_sound = space_age_item_sounds.agriculture_inventory_move,
+    stack_size = 100,
+    default_import_location = "gleba",
+  },
+  {
+    type = "recipe",
+    name = "jellyskin-processing",
+    category = "organic",
+    subgroup = "agriculture-processes",
+    order = "e[agriculture]-a[tin]",
+    icons = {
+      {icon = "__bztin__/graphics/icons/organotins.png", icon_size = 64},
+      {icon = "__bztin__/graphics/icons/jellyskin.png", icon_size=64, shift={0,-8}},
+    },
+    enabled = false,
+    allow_productivity = true,
+    ingredients =
+    {
+      util.item("jellyskin", 1),
+    },
+    energy_required = 8/3,
+    allow_decomposition = false,
+    results = {
+      util.fluid("organotins", 100),
+    },
+    main_product="organotins",
+  },
+  {
+    type = "recipe",
+    name = "tin-from-organotins",
+    category = "organic",
+    subgroup = "agriculture-processes",
+    order = "e[agriculture]-a[tin]",
+    icons = {
+      {icon = "__bztin__/graphics/icons/organotins.png", icon_size = 64},
+      {icon = "__bztin__/graphics/icons/tin-ore.png", icon_size=64, scale=0.333, shift={0,8}},
+    },
+    enabled = false,
+    allow_productivity = true,
+    ingredients =
+    {
+      util.fluid("organotins", 100),
+      util.item("pentapod-egg"),
+    },
+    energy_required = 16/3,
+    allow_decomposition = false,
+    results = {
+      util.item("tin-ore", 6),
+    },
+    main_product="tin-ore",
+  },
+
+})
+util.add_product("jellynut-processing", util.item("jellyskin", 1, .25))
+util.add_ingredient("bioplastic", "organotins", 7.5)
+util.set_icons("bioplastic", {
+  {icon = "__space-age__/graphics/icons/bioplastic.png", icon_size = 64},
+  {icon = "__bztin__/graphics/icons/organotins.png", icon_size = 64, scale=.25, shift={0,-8}},
+})
+util.add_unlock("biochamber", "jellyskin-processing")
+util.add_unlock("biochamber", "tin-from-organotins")
 end
+
+if mods["planet-muluna"] then -- moon where you get resources from crushing on the surface
+data:extend({
+  {
+    type = "recipe",
+    name = "metallic-asteroid-crushing-tin",
+    icons =  {
+      {icon = "__space-age__/graphics/icons/metallic-asteroid-crushing.png", icon_size=64},
+      {icon="__bztin__/graphics/icons/tin-ore.png", icon_size=64, scale =0.25, shift = {0,4}},
+    },
+    category = "crushing",
+    subgroup="space-crushing",
+    order = "b-a-a",
+    auto_recycle = false,
+    enabled = false,
+    ingredients =
+    {
+      {type = "item", name = "metallic-asteroid-chunk", amount = 1},
+    },
+    energy_required = 2,
+    results =
+    {
+      {type = "item", name = "tin-ore", amount = 15},
+      {type = "item", name = "metallic-asteroid-chunk", amount = 1, probability = 0.2}
+    },
+    allow_productivity = true,
+    allow_decomposition = false
+  },
+})
+util.add_unlock("space-platform-thruster", "metallic-asteroid-crushing-tin")
+end
+end
+

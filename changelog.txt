@@ -1,4 +1,16 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.0.0
+Date: 2024-12-31
+  Changes:
+    - Updated to Factorio 2.0 and Space Age
+      Can be added to existing savegame. Will generate ore patches on newly explored chunks on Nauvis.
+      To add ore patches to previously explored chunks, use /bz-regenerate console command.
+    - bzlist chat command is now a proper console command: /bz-list
+    - Alternate processes for creating tin on Vulcanus and Gleba, and recycling on Fulgora
+    - A small number of new uses for tin in Spage Age. (More may come later)
+    - Confirmed compatible with many modded planets.
+    - Compatibility with other mods is not confirmed, but many will still work
+---------------------------------------------------------------------------------------------------
 Version: 0.1.13
 Date: 2024-02-10
   Changes:
