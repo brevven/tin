@@ -58,8 +58,10 @@ data:extend({
 })
 
 local solder_ingredients = {util.item("tin-plate", 4), util.item("copper-plate", 1)}
+local solder_casting = {util.fluid("molten-tin", 40), util.fluid("molten-copper", 10)}
 if mods.bzlead then
   solder_ingredients = {util.item("tin-plate", 3), util.item("lead-plate", 2)}
+  solder_casting = {util.fluid("molten-tin", 30), util.fluid("molten-lead", 20)}
 end
 data:extend({
   {
@@ -83,6 +85,28 @@ data:extend({
   }
 })
 
+if mods["space-age"] then
+data:extend({
+  {
+    type = "recipe",
+    name = "casting-solder",
+    category = "metallurgy",
+    subgroup = "vulcanus-processes",
+    order = "z[casting]-d[casting-solder]",
+    icons = {
+      {icon = "__bztin__/graphics/icons/solder.png", icon_size = 128, shift={-4,4}},
+      {icon = "__bztin__/graphics/icons/molten-tin-sa.png", icon_size = 64, shift={4,-4}},
+    },
+    enabled = false,
+    ingredients = solder_casting,
+    energy_required = 10,
+    allow_decomposition = false,
+    results = {{type = "item", name = "solder", amount = 40}},
+    allow_productivity = true
+  },
+})
+util.add_effect("foundry", { type = "unlock-recipe", recipe = "casting-solder" })
+end
 if mods.bzaluminum and not mods.bzlead then
   data:extend({
   {
@@ -235,6 +259,32 @@ if mods.bzfoundry and data.raw.item["foundry"] then
   util.add_effect("foundry", { type = "unlock-recipe", recipe = "bronze-plate" })
   util.add_prerequisite("fast-inserter", "foundry")
   util.set_to_founding("bronze-plate", {force=true})
+elseif mods["space-age"] then
+data:extend({
+  {
+    type = "recipe",
+    name = "casting-bronze",
+    category = "metallurgy",
+    subgroup = "vulcanus-processes",
+    order = "b[casting]-d[casting-tin-bronze]",
+    icons = {
+      {icon = "__bztin__/graphics/icons/bronze-plate.png", icon_size = 128, shift={-4,4}},
+      {icon = "__space-age__/graphics/icons/fluid/molten-copper.png", icon_size = 64, shift={4,-4}},
+    },
+    enabled = false,
+    ingredients =
+    {
+      {type = "fluid", name = "molten-copper", amount = bronze_i["copper-plate"], fluidbox_multiplier = 10},
+      {type = "fluid", name = "molten-tin", amount = bronze_i["tin-plate"], fluidbox_multiplier = 10},
+    },
+    energy_required = 2.4,
+    allow_decomposition = false,
+    results = {{type = "item", name = "bronze-plate", amount = 2}},
+    allow_productivity = true
+  },
+})
+util.add_effect("foundry", { type = "unlock-recipe", recipe = "casting-bronze" })
+util.add_effect("automation", { type = "unlock-recipe", recipe = "bronze-plate" })
 else
   util.add_effect("automation", { type = "unlock-recipe", recipe = "bronze-plate" })
 end

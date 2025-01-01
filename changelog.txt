@@ -4,6 +4,8 @@ Date: 2024-12-31
   Changes:
     - Organotins will show up in a better location in places like Factoriopedia
     - Tweak bronze plate icon
+  Features:
+    - Add casting recipes for solder, and bronze if enabled.
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.0
 Date: 2024-12-31
