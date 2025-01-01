@@ -117,6 +117,7 @@ data:extend({
   {
     type = "fluid",
     name = "organotins",
+    subgroup = "fluid",
     default_temperature = 25,
     heat_capacity = "0.1kJ",
     base_color = {r=0.75, g=0.65, b=0.1},
