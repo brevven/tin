@@ -5,6 +5,7 @@ Date: 2024-12-31
     - Organotins will show up in a better location in places like Factoriopedia
     - Tweak bronze plate icon
   Features:
+    - Supports Hot metals mod.
     - Add casting recipes for solder, and bronze if enabled.
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.0
