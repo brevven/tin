@@ -3,19 +3,19 @@ local util = require("data-util");
 util.add_hot_metals({
   {name="tin-plate", spoilTicks=20*60, icons={
     { icon = "__bztin__/graphics/icons/tin-plate.png", icon_size = 128},
-    { icon = "__bztin__/graphics/icons/tin-plate.png", icon_size = 128, tint={.9,.2,0, .5}},
+    { icon = "__bztin__/graphics/icons/tin-plate.png", icon_size = 128, tint={.9,.3,0, .5}},
   }},
   {name="bronze-plate", spoilTicks=20*60, icons={
     { icon = "__bztin__/graphics/icons/bronze-plate.png", icon_size = 128},
-    { icon = "__bztin__/graphics/icons/bronze-plate.png", icon_size = 128, tint={.9,.2,0, .5}},
+    { icon = "__bztin__/graphics/icons/bronze-plate.png", icon_size = 128, tint={.9,.3,0, .5}},
   }},
   {name="tinned-cable", spoilTicks=20*60, icons={
     { icon = "__bztin__/graphics/icons/tinned-cable.png", icon_size = 64},
-    { icon = "__bztin__/graphics/icons/tinned-cable.png", icon_size = 64, tint={.9,.2,0, .5}},
+    { icon = "__bztin__/graphics/icons/tinned-cable.png", icon_size = 64, tint={.9,.3,0, .5}},
   }},
   {name="solder", spoilTicks=5*60, icons={
     { icon = "__bztin__/graphics/icons/solder.png", icon_size = 128},
-    { icon = "__bztin__/graphics/icons/solder.png", icon_size = 128, tint={.9,.2,0, .5}},
+    { icon = "__bztin__/graphics/icons/solder.png", icon_size = 128, tint={.9,.3,0, .5}},
   }},
 })
 

@@ -18,6 +18,7 @@
       "? space-exploration >= 0.5.100",
       "(?) aai-industry",
       "? aai-industry",
+      "? hot-metals",
       "? Krastorio2",
       "? sand-and-glass",
       "? deadlock-beltboxes-loaders",
