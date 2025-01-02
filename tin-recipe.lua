@@ -310,6 +310,7 @@ data:extend({
     subgroup = "vulcanus-processes",
     category = "chemistry",
     main_product = "tin-sulfides",
+    enabled = false,
     allow_productivity = true,
     energy_required = 1,
     ingredients = {
@@ -335,6 +336,7 @@ data:extend({
     subgroup = "vulcanus-processes",
     category = "chemistry",
     main_product = "tin-ore",
+    enabled = false,
     allow_productivity = true,
     energy_required = 2,
     icons = {
