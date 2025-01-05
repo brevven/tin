@@ -53,7 +53,8 @@ data:extend({
     icon_size = 128,
     subgroup = "raw-material",
     order = "b[tin-plate]",
-    stack_size = util.get_stack_size(100)
+    stack_size = util.get_stack_size(100),
+    weight = 1*kg,
   },
 })
 
@@ -72,6 +73,7 @@ data:extend({
     subgroup = "intermediate-product",
     order = "b[solder]",
     stack_size = util.get_stack_size(100),
+    weight = 1*kg,
   },
   {
     type = "recipe",
@@ -196,6 +198,7 @@ data:extend({
     subgroup = util.cablesg,
     order = "b[tinned-cable]",
     stack_size = util.get_stack_size(100),
+    weight = 1*kg,
   },
   {
     type = "recipe",
@@ -240,6 +243,7 @@ data:extend({
     subgroup = "intermediate-product",
     order = "b[bronze-plate]",
     stack_size = util.get_stack_size(100),
+    weight = 1*kg,
   },
   {
     type = "recipe",
@@ -432,6 +436,7 @@ data:extend({
     drop_sound = space_age_item_sounds.agriculture_inventory_move,
     stack_size = 100,
     default_import_location = "gleba",
+    weight = 1*kg,
   },
   {
     type = "recipe",

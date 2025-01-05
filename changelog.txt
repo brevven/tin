@@ -4,6 +4,7 @@ Date: 2025-01-04
   Fixes:
     - Lock tin sulfides properly behind tech
   Changes:
+    - Update weights for rockets
     - Hot metals: use default cooling time
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.1
