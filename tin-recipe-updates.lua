@@ -192,3 +192,7 @@ if mods.bobassembly then
   util.add_ingredient("fluid-furnace", "solder", 1)
   util.add_ingredient("chemical-plant-2", "solder", 1)
 end
+
+util.add_minable_result("simple-entity", "huge-volcanic-rock", {type="item", name="tin-ore", amount_min=5, amount_max=10})
+util.add_gleba_rock("tin-ore")
+
