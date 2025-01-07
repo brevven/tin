@@ -18,6 +18,7 @@ if mods["any-planet-start"] and util.me.get_setting("aps-planet") == "fulgora" t
   util.add_product("scrap-recycling", util.item("bronze-plate", 1, 0.01))
   util.set_product_amount("recycler", "bronze-plate", 2)
 end
+util.redo_recycling()
 
 -- Must be last
 util.create_list()

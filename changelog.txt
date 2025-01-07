@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.0.4
+Date: 2025-01-06
+  Fixes:
+    - Fix recycling recipes for items that use tin.
+    - Also, attempt to respect disabling of recycling recipes
+---------------------------------------------------------------------------------------------------
 Version: 2.0.3
 Date: 2025-01-05
   Changes:

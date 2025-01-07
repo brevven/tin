@@ -36,5 +36,7 @@ if mods.RenaiTransportation then
   end
 end
 
+util.size_recycler_output()
+
 -- Must be last
 util.create_list()

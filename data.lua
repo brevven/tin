@@ -7,6 +7,8 @@ require("compatibility.data.hot-metals")
 
 local util = require("data-util");
 
+util.prepare_recycling_helper()
+
 
 -- Must be last
 util.create_list()
