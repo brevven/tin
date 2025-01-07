@@ -2,7 +2,7 @@
 
 local util = require("data-util");
 
-if deadlock then
+if deadlock and deadlock["add_stack"] then
   deadlock.add_stack("tin-ore",  "__bztin__/graphics/icons/stacked/tin-ore-stacked.png", "deadlock-stacking-1", 64)
   deadlock.add_stack("tin-plate",  "__bztin__/graphics/icons/stacked/tin-plate-stacked.png", "deadlock-stacking-1", 128)
   deadlock.add_stack("solder",  "__bztin__/graphics/icons/stacked/solder-stacked.png", "deadlock-stacking-1", 128)
