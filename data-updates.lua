@@ -9,10 +9,10 @@ require("compatibility/crafting-efficiency")
 
 local util = require("data-util");
 
-if mods.Asteroid_Mining then
-  require("__Asteroid_Mining__.scripts.addmodule")
-  amfunc.addtype("tin-ore", {a = 0,r = 0.55,g = 0.45,b = 0.3})
+if mods.Asteroid_Mining and not data.raw.item["asteroid-tin-ore"] then
+  util.addtype("tin-ore", {a = 0,r = 0.55,g = 0.45,b = 0.3})
 end
+
 if mods["any-planet-start"] and util.me.get_setting("aps-planet") == "fulgora" then
   -- In order to craft the first recycler, if bronze is enabled
   util.add_product("scrap-recycling", util.item("bronze-plate", 1, 0.01))
