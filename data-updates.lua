@@ -13,12 +13,18 @@ if mods.Asteroid_Mining and not data.raw.item["asteroid-tin-ore"] then
   util.addtype("tin-ore", {a = 0,r = 0.55,g = 0.45,b = 0.3})
 end
 
-if mods["any-planet-start"] and util.me.get_setting("aps-planet") == "fulgora" then
-  -- In order to craft the first recycler, if bronze is enabled
-  util.add_product("scrap-recycling", util.item("bronze-plate", 1, 0.01))
-  util.set_product_amount("recycler", "bronze-plate", 2)
-end
 util.redo_recycling()
 
+-- Helps with fulgora clean starts
+util.add_minable_result("simple-entity", "fulgoran-ruin-vault", {type="item", name="bronze-plate", amount_min=79, amount_max=103})
+util.add_minable_result("simple-entity", "fulgoran-ruin-colossal", {type="item", name="bronze-plate", amount_min=15, amount_max=40})
+util.add_minable_result("simple-entity", "fulgoran-ruin-huge", {type="item", name="bronze-plate", amount_min=7, amount_max=31})
+util.add_minable_result("simple-entity", "fulgoran-ruin-big", {type="item", name="bronze-plate", amount_min=7, amount_max=15})
+util.add_minable_result("simple-entity", "fulgoran-ruin-stonehenge", {type="item", name="bronze-plate", amount_min=7, amount_max=13})
+util.add_minable_result("simple-entity", "fulgoran-ruin-medium", {type="item", name="bronze-plate", amount_min=1, amount_max=7})
+util.add_minable_result("simple-entity", "fulgoran-ruin-small", {type="item", name="bronze-plate", amount_min=0, amount_max=2})
+
+util.add_minable_result("simple-entity", "big-fulgora-rock", {type="item", name="tin-ore", amount_min=10, amount_max=22})
+util.add_minable_result("simple-entity", "big-fulgora-rock", {type="item", name="lead-ore", amount_min=10, amount_max=22})
 -- Must be last
 util.create_list()

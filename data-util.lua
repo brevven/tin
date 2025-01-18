@@ -912,14 +912,20 @@ function util.get_ingredient_amount(recipe_name, ingredient_name)
   return 0
 end
 
--- Get the amount of the result
+-- Get the amount of the result (currently ignores probability)
 function util.get_amount(recipe_name, product)
   if not product then product = recipe_name end
   local recipe = data.raw.recipe[recipe_name]
   if recipe then
     if recipe.results then
       for i, result in pairs(recipe.results) do
-        if result.name == product then return result.amount end
+        if result.name == product then
+          if result.amount then
+            return result.amount
+          elseif result.amount_min then
+            return (result.amount_min + result.amount_max) / 2
+          end
+        end
       end
     end
     return 0
@@ -944,7 +950,7 @@ end
 --    Use amount to set an amount. If that amount is a multiplier instead of an exact amount, set multiply true.
 function util.replace_ingredient(recipe_name, old, new, amount, multiply, options)
   if not should_force(options) and bypass(recipe_name) then return end
-  if data.raw.recipe[recipe_name] and (data.raw.item[new] or data.raw.fluid[new]) then
+  if data.raw.recipe[recipe_name] and (data.raw.item[new] or data.raw.fluid[new]) and (data.raw.item[old] or data.raw.fluid[old]) then
     me.add_modified(recipe_name)
     prepare_redo_recycling(recipe_name)
     replace_ingredient(data.raw.recipe[recipe_name], old, new, amount, multiply)
@@ -1513,7 +1519,7 @@ end
 
 -- Adds a result to a mineable type
 function util.add_minable_result(t, name, result)
-  if data.raw[t] and data.raw[t][name] and data.raw[t][name].minable then
+  if data.raw[t] and data.raw[t][name] and data.raw[t][name].minable and data.raw.item[result.name] then
     if data.raw[t][name].minable.result and not data.raw[t][name].minable.results then
       data.raw[t][name].minable.results = {
         util.item(data.raw[t][name].minable.result ,data.raw[t][name].minable.count)}

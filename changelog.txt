@@ -1,6 +1,26 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.1.1
+Date: 2025-01-17
+  Changes:
+    - Fix load issues with some mod settings and loadouts introduced last version
+---------------------------------------------------------------------------------------------------
+Version: 2.1.0
+Date: 2025-01-17
+  Changes:
+    - Space Age: Add new "Alloy separation" technology that allows recycling of some alloys,
+      including solder and bronze. These alloys will only self-recycle at first, but researching 
+      the new tech will unlock a recycling recipe that breaks them down into components.
+    - Space Age: Tinned cable is always enabled (mostly affects combinator and pumpjack recipes)
+      Scrap recycling now produces tinned cable instead of copper cable, at 4x the rate.
+      This will almost certainly require some adjustment on Fulgora, but will be a buff to tin
+      production on Fulgora, without nerfing copper production.
+    - Space Age: When bronze plate is enabled, Fulgoran ruins now hold some.
+    - Space Age: Big Fulgora rocks now have some tin ore (and if Lead mod is enabled, lead ore) to 
+      help kickstart production before solder can be recycled.
+    - Space Age / Any Planet Start: Scrap recycling no longer produces bronze plates
+---------------------------------------------------------------------------------------------------
 Version: 2.0.6
-Date: 2025-01-07
+Date: 2025-01-14
   Fixes:
     - Working with Asteroid Mining mod
 ---------------------------------------------------------------------------------------------------

@@ -106,6 +106,31 @@ data:extend({
     results = {{type = "item", name = "solder", amount = 40}},
     allow_productivity = true
   },
+  {
+    type = "item-subgroup",
+    name = "alloy-separation",
+    group = "intermediate-products",
+  },
+  {
+    type = "technology",
+    name = "alloy-separation",
+    icons = {
+      {icon = "__bztin__/graphics/icons/solder.png", icon_size = 128, scale = 0.33, shift = {0,-6}},
+      {icon = "__bztin__/graphics/icons/tin-plate.png", icon_size = 128, scale = 0.25, shift = {-6,4}},
+      mods.bzlead and {icon = "__bzlead__/graphics/icons/lead-plate.png", icon_size = 64, scale = 0.5, shift = {6,4}} or
+      {icon = "__base__/graphics/icons/copper-plate.png", icon_size = 64, scale = 0.5, shift = {6,4}},
+    },
+    effects = {},
+    prerequisites = {"metallurgic-science-pack", "electromagnetic-science-pack"},
+    unit = {
+      count = 250, time = 30,
+      ingredients = {
+        {"chemical-science-pack", 1},
+        {"electromagnetic-science-pack", 1},
+        {"metallurgic-science-pack", 1},
+      }
+    }
+  },
 })
 util.add_effect("foundry", { type = "unlock-recipe", recipe = "casting-solder" })
 end
@@ -528,4 +553,3 @@ data:extend({
 util.add_unlock("space-platform-thruster", "metallic-asteroid-crushing-tin")
 end
 end
-

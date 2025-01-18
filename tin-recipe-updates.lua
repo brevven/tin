@@ -9,6 +9,12 @@ else
   util.add_product("scrap-recycling", util.item("solder", 1, .01))
 end
 
+if mods["space-age"] then
+  util.replace_product("scrap-recycling", "copper-cable", "tinned-cable")
+  util.set_product_probability("scrap-recycling", "tinned-cable", 0.12)
+  util.add_to_ingredient("tinned-cable", "tin-plate", 1)
+end
+
 if mods.bztitanium then
   util.replace_ingredient("superconductor", "titanium-plate", "tin-plate")
 else

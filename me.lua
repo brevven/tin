@@ -12,6 +12,7 @@ me.recipes = {"tin-plate", "solder", "organotins",
 
 
 function me.use_cable()
+  if mods["space-age"] then return true end
   if me.get_setting("bz-all-intermediates") then return true end
   return me.get_setting("bztin-more-intermediates") == "cable" or me.use_bronze()
 end
