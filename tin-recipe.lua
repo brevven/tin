@@ -78,7 +78,7 @@ data:extend({
   {
     type = "recipe",
     name = "solder",
-    category = "crafting",
+    category = mods["space-age"] and "electronics" or "crafting",
     order = "d[solder]",
     enabled = true,
     energy_required = 1,
