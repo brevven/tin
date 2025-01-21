@@ -1,7 +1,7 @@
 local util = require("data-util");
-local recycling = require("__quality__.prototypes.recycling")
 
 if mods["space-age"] then
+local recycling = require("__quality__.prototypes.recycling")
 
 function recipe_is_separable(recipe)
   for _, category in pairs(not_separable) do
