@@ -1025,7 +1025,7 @@ function replace_some_product(recipe, old, old_amount, new, new_amount)
         end
       end
     end
-    add_product(recipe, {new, new_amount})
+    add_product(recipe, util.item(new, new_amount))
 		for i, product in pairs(recipe.results) do 
 			if product.name == old then
         product.amount = math.max(1, product.amount - old_amount)
@@ -1527,6 +1527,9 @@ function util.add_minable_result(t, name, result)
       data.raw[t][name].minable.result_count = nil
     end
     if data.raw[t][name].minable.results then
+      for _, other in pairs(data.raw[t][name].minable.results) do
+        if other.name == result.name then return end -- don't add if already present
+      end
       table.insert(data.raw[t][name].minable.results, result)
     else
       data.raw[t][name].minable.results = {result}
