@@ -1,9 +1,9 @@
-require("alloy-separation")
 require("tin-recipe-final-stacking")
 -- require("tin-recipe-final-5d")
 require("tin-recipe-final-rrr")
 
 local util = require("data-util");
+
 util.replace_some_ingredient("se-glass-vulcanite", "sand", 1, "tin-plate", 1)
 util.add_product("se-glass-vulcanite", {type="item", name="tin-plate", amount=1, catalyst_amount=1, probability=0.8})
 util.set_main_product("se-glass-vulcanite", "glass")
@@ -39,6 +39,7 @@ end
 
 util.size_recycler_output()
 util.redo_recycling()
+require("alloy-separation")  -- should be after final redo_recycling
 
 -- Must be last
 util.create_list()

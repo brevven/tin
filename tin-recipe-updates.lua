@@ -202,3 +202,7 @@ end
 util.add_minable_result("simple-entity", "huge-volcanic-rock", {type="item", name="tin-ore", amount_min=5, amount_max=10})
 util.add_gleba_rock("tin-ore")
 
+
+-- Maraxsis
+util.add_ingredient("maraxsis-glass-panes", "tin-plate", 1)
+util.add_minable_result("simple-entity", "big-sand-rock-underwater", {type="item", name="tin-ore", amount_min=5, amount_max=10})
