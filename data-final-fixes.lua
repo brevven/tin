@@ -38,6 +38,7 @@ if mods.RenaiTransportation then
 end
 
 util.size_recycler_output()
+util.redo_recycling()
 
 -- Must be last
 util.create_list()
