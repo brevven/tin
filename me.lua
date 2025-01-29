@@ -1,7 +1,7 @@
 local me = {}
 
 me.name = "bztin"
-me.resources = {"tin-ore"}
+me.resources = {{"tin-ore", "nauvis"}}
 me.list = {}
 me.recipes = {"tin-plate", "solder", "organotins",
               "enriched-tin",

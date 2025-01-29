@@ -1543,6 +1543,16 @@ function util.add_minable_result(t, name, result)
   end
 end
 
+function util.set_surface_property(surface, condition, value)
+  if not data.raw["surface-property"][condition] then return end
+  if data.raw.surface[surface] then
+    data.raw.surface[surface].surface_properties[condition] = value
+  end
+  if data.raw.planet[surface] then
+    data.raw.planet[surface].surface_properties[condition] = value
+  end
+end
+
 
 local function insert(nodes, node, value)
     table.insert(node, value) -- store as parameter
@@ -1627,6 +1637,7 @@ end
 function remove_prior_unlocks(tech, recipe)
   local technology = data.raw.technology[tech]
   if technology then
+    log("Removing prior unlocks for ".. tech)
     util.remove_recipe_effect(tech, recipe)
     if technology.prerequisites then
       for i, prerequisite in pairs(technology.prerequisites) do
@@ -1662,6 +1673,7 @@ function util.replace_ingredients_prior_to(tech, old, new, multiplier)
 end
 
 function replace_ingredients_prior_to(tech, old, new, multiplier)
+  log("Replacing for tech "..tech)
   local technology = data.raw.technology[tech]
   if technology then
     if technology.effects then
