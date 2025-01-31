@@ -34,5 +34,8 @@ util.add_minable_result("simple-entity", "fulgoran-ruin-small", {type="item", na
 
 util.add_minable_result("simple-entity", "big-fulgora-rock", {type="item", name="tin-ore", amount_min=10, amount_max=22})
 util.add_minable_result("simple-entity", "big-fulgora-rock", {type="item", name="lead-ore", amount_min=10, amount_max=22})
+
+
+util.add_shiftite_recipe("tin-plate", {"delta"}, 1)
 -- Must be last
 util.create_list()
