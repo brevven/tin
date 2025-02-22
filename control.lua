@@ -21,6 +21,8 @@ end
 script.on_event(defines.events.on_technology_effects_reset, update_recycling_on_reset)
 
 function update_recycling(force)
+  if not force.technologies["alloy-separation"] then return end  -- Tech acts as marker for whether separation recipes exist
+
   if not force.technologies["alloy-separation"].researched then
     -- In this case the player is probably trying to unresearch the tech, and we should fix
     -- recipes as would be expected in this case
