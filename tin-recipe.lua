@@ -28,13 +28,14 @@ data:extend({
     --        {type="item", name = "tin-plate", amount=5}
     --      }
     --    } or
-          main_product = "tin-plate",
-          enabled = true,
-          energy_required = 2.4,
-          ingredients = {util.item("tin-ore", 1)},
-          results = {
-            {type="item", name = "tin-plate", amount=1}
-          },
+    main_product = "tin-plate",
+    enabled = true,
+    energy_required = 2.4,
+    ingredients = {util.item("tin-ore", 1)},
+    results = {
+      {type="item", name = "tin-plate", amount=1}
+    },
+    allow_productivity = true,
     -- expensive =
     -- {
     --   main_product = "tin-plate",
@@ -84,6 +85,7 @@ data:extend({
     energy_required = 1,
     ingredients = solder_ingredients, 
     results = {util.item("solder", 4)},
+    allow_productivity = true,
   }
 })
 
@@ -187,6 +189,7 @@ data:extend({
     energy_required = 5,
     ingredients = {util.item("tin-plate", 3), {type="fluid", name="petroleum-gas", amount=20}},
     results = {{type="fluid", name="organotins", amount=50}},
+    allow_productivity = true,
     crafting_machine_tint = {
       primary = {r = 1.000, g = 0.995, b = 0.089, a = 1.000}, 
       secondary = {r = 1.000, g = 0.975, b = 0.890, a = 1.000}, 
@@ -233,6 +236,7 @@ data:extend({
     enabled = false,
     energy_required = 1.5,
     ingredients = {util.item("tin-plate", 1), util.item("copper-cable", 8)},
+    allow_productivity = true,
     results = {util.item("tinned-cable", 8)},
   },
   {
@@ -279,6 +283,7 @@ data:extend({
     energy_required = 60,
     ingredients = {},
     results = {util.item("bronze-plate", 20)},
+    allow_productivity = true,
   },
 })
 for item, count in pairs(bronze_i) do
