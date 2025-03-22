@@ -14,19 +14,21 @@ util.set_main_product("se-glass-vulcanite", "glass")
 util.add_to_product("se-core-fragment-omni", "tin-ore", -4)
 
 -- Electronic circuits need final fixes
-local amt_ec = util.get_amount("electronic-circuit-stone", "electronic-circuit")
-if amt_ec == 1 then
-  util.multiply_recipe("electronic-circuit-stone", 2)
-  util.set_recipe_time("electronic-circuit-stone", 0.5) -- faster but more complex
+function modify_ec(recipe_name, to_replace)
+  if not to_replace then
+    to_replace = "copper-cable"
+  end
+  local amt_ec = util.get_amount(recipe_name, "electronic-circuit")
+  if amt_ec == 1 then
+    util.multiply_recipe(recipe_name, 2)
+    util.set_recipe_time(recipe_name, 0.5) -- faster but more complex
+  end
+  util.replace_some_ingredient(recipe_name, to_replace, 1, "solder", 1)
 end
-util.replace_some_ingredient("electronic-circuit-stone", "copper-cable", 1, "solder", 1)
-
-amt_ec = util.get_amount("electronic-circuit")
-if amt_ec == 1 then
-  util.multiply_recipe("electronic-circuit", 2)
-  util.set_recipe_time("electronic-circuit-stone", 0.5) -- faster but more complex
-end
-util.replace_some_ingredient("electronic-circuit", "copper-cable", 1, "solder", 1)
+modify_ec("electronic-circuit")
+modify_ec("electronic-circuit-stone")
+modify_ec("electronic-circuit-wood")
+modify_ec("electronic-circuit-aluminum", "aluminum-cable")
 
 if mods.RenaiTransportation then
   for i, recipe in pairs(data.raw.recipe) do
