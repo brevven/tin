@@ -1,5 +1,6 @@
 -- Aluminum smelting
 
+local item_sounds = require('__base__.prototypes.item_sounds')
 local util = require("data-util");
 local futil = require("util");
 
@@ -56,6 +57,9 @@ data:extend({
     order = "b[tin-plate]",
     stack_size = util.get_stack_size(100),
     weight = 1*kg,
+    inventory_move_sound = item_sounds.metal_small_inventory_move,
+    pick_sound = item_sounds.metal_small_inventory_pickup,
+    drop_sound = item_sounds.metal_small_inventory_move,
   },
 })
 
@@ -75,6 +79,9 @@ data:extend({
     order = "b[solder]",
     stack_size = util.get_stack_size(100),
     weight = 1*kg,
+    inventory_move_sound = item_sounds.wire_inventory_move,
+    pick_sound = item_sounds.wire_inventory_pickup,
+    drop_sound = item_sounds.wire_inventory_move,
   },
   {
     type = "recipe",
@@ -227,6 +234,9 @@ data:extend({
     order = "b[tinned-cable]",
     stack_size = util.get_stack_size(100),
     weight = 1*kg,
+    inventory_move_sound = item_sounds.wire_inventory_move,
+    pick_sound = item_sounds.wire_inventory_pickup,
+    drop_sound = item_sounds.wire_inventory_move,
   },
   {
     type = "recipe",
@@ -273,6 +283,9 @@ data:extend({
     order = "b[bronze-plate]",
     stack_size = util.get_stack_size(100),
     weight = 1*kg,
+    inventory_move_sound = item_sounds.metal_small_inventory_move,
+    pick_sound = item_sounds.metal_small_inventory_pickup,
+    drop_sound = item_sounds.metal_small_inventory_move,
   },
   {
     type = "recipe",

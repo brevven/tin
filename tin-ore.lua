@@ -1,5 +1,5 @@
 local resource_autoplace = require('resource-autoplace');
-
+local item_sounds = require('__base__.prototypes.item_sounds')
 local util = require("data-util");
 
 resource_autoplace.initialize_patch_set("tin-ore", true)
@@ -73,6 +73,9 @@ data:extend({
         {filename="__bztin__/graphics/icons/tin-ore-2.png", size=64, scale=0.5},
         {filename="__bztin__/graphics/icons/tin-ore-3.png", size=64, scale=0.5},
       },
+      inventory_move_sound = item_sounds.resource_inventory_move,
+      pick_sound = item_sounds.resource_inventory_pickup,
+      drop_sound = item_sounds.resource_inventory_move,
       subgroup = "raw-resource",
       order = "t-c-a",
       stack_size = util.get_stack_size(50)
