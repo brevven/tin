@@ -569,5 +569,6 @@ data:extend({
   },
 })
 util.add_unlock("space-platform-thruster", "metallic-asteroid-crushing-tin")
+util.add_to_productivity_research("asteroid-productivity", "metallic-asteroid-crushing-tin")
 end
 end
