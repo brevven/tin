@@ -5,6 +5,7 @@ Date: 2025-03-22
     - Set inventory sounds for some items
   Fixes:
     - Loads with crafting efficiency
+    - Improved compatibility with Muluna
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.9
 Date: 2025-03-04
