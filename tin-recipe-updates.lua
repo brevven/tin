@@ -10,9 +10,14 @@ else
 end
 
 if mods["space-age"] then
+  util.add_to_ingredient("tinned-cable", "tin-plate", 1)
   util.replace_product("scrap-recycling", "copper-cable", "tinned-cable")
   util.set_product_probability("scrap-recycling", "tinned-cable", 0.12)
-  util.add_to_ingredient("tinned-cable", "tin-plate", 1)
+
+  -- Cerys
+  util.replace_product("cerys-nuclear-scrap-recycling", "copper-cable", "tinned-cable")
+  util.set_product_probability("scrap-recycling", "tinned-cable", 0.28)
+  util.add_prerequisite("moon-discovery-cerys", "alloy-separation")
 end
 
 if mods.bztitanium then
