@@ -16,7 +16,7 @@ if mods["space-age"] then
 
   -- Cerys
   util.replace_product("cerys-nuclear-scrap-recycling", "copper-cable", "tinned-cable")
-  util.set_product_probability("scrap-recycling", "tinned-cable", 0.28)
+  util.set_product_probability("cerys-nuclear-scrap-recycling", "tinned-cable", 0.28)
   util.add_prerequisite("moon-discovery-cerys", "alloy-separation")
 end
 

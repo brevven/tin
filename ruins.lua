@@ -25,4 +25,6 @@ util.add_minable_result("simple-entity", "cerys-ruin-huge", {type="item", name="
 util.add_minable_result("simple-entity", "cerys-ruin-medium", {type="item", name="bronze-plate", amount_min=3, amount_max=5})
 util.add_minable_result("simple-entity", "cerys-ruin-big", {type="item", name="bronze-plate", amount_min=2, amount_max=4})
 util.add_minable_result("simple-entity", "cerys-ruin-small", {type="item", name="bronze-plate", amount_min=1, amount_max=3})
+util.add_minable_result("simple-entity", "cerys-ruin-colossal", {type="item", name="medium-electric-pole", amount_min=1, amount_max=3})
+util.add_minable_result("simple-entity", "cerys-ruin-huge", {type="item", name="medium-electric-pole", amount_min=1, amount_max=1})
 -- Cerys

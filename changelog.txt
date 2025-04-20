@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.1.12
+Date: 2025-04-20
+  Fixes:
+    - Cerys: Fix tinned cable ratios in recycling on both Cerys and Fulgora
+    - Cerys: Fix soft lock on initial power poles by providing some in huge and colossal ruins
+---------------------------------------------------------------------------------------------------
 Version: 2.1.11
 Date: 2025-04-08
   Changes:
