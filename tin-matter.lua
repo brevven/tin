@@ -69,7 +69,7 @@ if mods["Krastorio2"] then
       material = { type = "item", name = "tin-ore", amount = 10 },
       matter_count = 5,
       energy_required = 1,
-      need_stabilizer = false,
+      needs_stabilizer = false,
       unlocked_by = "tin-matter-processing"
     }
   matter.make_recipes(tin_ore_matter)
@@ -81,7 +81,7 @@ if mods["Krastorio2"] then
       matter_count = 10,
       energy_required = 3,
       -- only_deconversion = true,
-      need_stabilizer = true,
+      needs_stabilizer = true,
       unlocked_by = "tin-matter-processing"
     }
   matter.make_deconversion_recipe(tin_plate_matter)
