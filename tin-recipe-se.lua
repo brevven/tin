@@ -50,7 +50,7 @@ if string.sub(mods["space-exploration"], 1, 3) == "0.6" then
     },
     energy_required = 45,
     ingredients = {
-      {name = mods.Krastorio2 and "enriched-tin" or "tin-ore", amount = 24},
+      {type = "item", name = mods.Krastorio2 and "enriched-tin" or "tin-ore", amount = 24},
       {type = "fluid", name = "se-pyroflux", amount = 10},
     },
     enabled = false,

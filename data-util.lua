@@ -117,10 +117,7 @@ end
 
 function util.get_stack_size(default) 
   if mods.Krastorio2 then
-    local size = get_setting("kr-stack-size")
-    if size and tonumber(size) then
-      return tonumber(size)
-    end
+    return 200
   end
   return default
 end
