@@ -116,8 +116,8 @@ function util.fe_plus(sub)
 end
 
 function util.get_stack_size(default) 
-  if mods.Krastorio2 then
-    return 200
+  if mods.Krastorio2 and kr_adjust_stack_sizes then
+    return tonumber(200)
   end
   return default
 end
@@ -512,7 +512,7 @@ end
 -- k2 matter 
 -- params: {k2matter}, k2baseicon , {icon}
 function util.k2matter(params)
-  local matter = require("__Krastorio2__/lib/public/data-stages/matter-util")
+  local matter = require("__Krastorio2__/prototypes/libraries/matter")
   if mods["space-exploration"] then 
     params.k2matter.need_stabilizer = true
   end
