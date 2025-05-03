@@ -4,6 +4,8 @@ Date: 2025-04-20
   Fixes:
     - Cerys: Fix tinned cable ratios in recycling on both Cerys and Fulgora
     - Cerys: Fix soft lock on initial power poles by providing some in huge and colossal ruins
+  Changes:
+    - Any planet start: On Vulcanus, unlock tinned cable earlier
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.11
 Date: 2025-04-08

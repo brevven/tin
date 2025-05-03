@@ -266,6 +266,10 @@ data:extend({
   },
 })
 util.add_prerequisite("tinned-cable", "copper-processing")
+if util.me.get_setting("aps-planet") == "vulcanus" then
+  util.set_prerequisite("tinned-cable", {"automation-science-pack"})
+  util.set_tech_recipe("tinned-cable", {{"automation-science-pack", 1}})
+end
 end
 
 if util.me.use_bronze() then
