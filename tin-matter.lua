@@ -3,11 +3,16 @@ if mods["Krastorio2"] then
   local util = require("data-util");
   util.k2matter({
     k2matter = {
-      item_name = "tin-ore",
-      matter_value = 5,
+      material = {
+        name = "tin-ore",
+        type = "item",
+        amount = 10,
+      },
+      matter_count = 5,
       energy_required = 1,
       need_stabilizer = false,
-      unlocked_by_technology = "tin-matter-processing",
+      allow_productivity = true,
+      unlocked_by = "tin-matter-processing",
     },
     k2baseicon = "stone",
     icon = { icon = "__bztin__/graphics/icons/tin-ore.png", icon_size = 64, scale = 1.4}
@@ -15,13 +20,17 @@ if mods["Krastorio2"] then
 
   util.k2matter({
     k2matter = {
-      item_name = "tin-plate",
-      minimum_conversion_quantity = 10,
-      matter_value = 10,
-      energy_required = 3,
+      material = {
+        name = "tin-plate",
+        type = "item",
+        amount = 10,
+      },
+      matter_count = 7.5,
+      energy_required = 2,
       only_deconversion = true,
+      allow_productivity = true,
       need_stabilizer = true,
-      unlocked_by_technology = "tin-matter-processing",
+      unlocked_by = "tin-matter-processing",
     },
   })
 end

@@ -1,8 +1,16 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.1.14
+Date: 2025-05-04
+  Changes:
+    - Support for Krastorio2 spaced out
+    - Minor tweaks to K2 integration
+---------------------------------------------------------------------------------------------------
 Version: 2.1.13
 Date: 2025-05-03
   Fixes:
     - Fix mod load issue with Bob's
+  Changes:
+    - K2: Compatibility updates (with thanks to autechr3 and pla)
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.12
 Date: 2025-04-20

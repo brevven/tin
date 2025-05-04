@@ -42,7 +42,7 @@ data:extend(
     results =
     { 
       {type = "item",  name = "enriched-tin", amount = 6},
-      {type = "fluid", name = "dirty-water", amount = 25, catalyst_amount = 25}
+      {type = "fluid", name = "kr-dirty-water", amount = 25, catalyst_amount = 25}
     },
     crafting_machine_tint =
     {
@@ -67,28 +67,28 @@ data:extend(
       always_show_made_in = true,
       always_show_products = true,
       allow_productivity = true,
-      ingredients = { {"enriched-tin", 5} },
-      results = { {"tin-plate", 5} },
+      ingredients = { util.item("enriched-tin", 5)},
+      results = { util.item("tin-plate", 5) },
       order = "b[tin-plate]-b[enriched-tin-plate]",
   },	
 	{
 		type = "recipe",
 		name = "dirty-water-filtration-tin",
-		category = "fluid-filtration",
+		category = "kr-fluid-filtration",
 		icons =
 		{
 			{
-				icon = data.raw.fluid["dirty-water"].icon,
-				icon_size = data.raw.fluid["dirty-water"].icon_size
+				icon = data.raw.fluid["kr-dirty-water"].icon,
+				icon_size = data.raw.fluid["kr-dirty-water"].icon_size
 			},
 			{
 				icon = data.raw.item["tin-ore"].icon,
 				icon_size =	data.raw.item["tin-ore"].icon_size,
-				scale = 0.20 * (data.raw.fluid["dirty-water"].icon_size/data.raw.item["tin-ore"].icon_size),
+				scale = 0.20 * 64 / (data.raw.item["tin-ore"].icon_size or 64),
 				shift = {0, 4}
 			}
 		},
-		icon_size = data.raw.fluid["dirty-water"].icon_size,
+		icon_size = data.raw.fluid["kr-dirty-water"].icon_size,
 		energy_required = 2,
 		enabled = false,
 		allow_as_intermediate = false,
@@ -96,7 +96,7 @@ data:extend(
 		always_show_products = true,
 		ingredients =
 		{
-			{type = "fluid", name = "dirty-water", amount = 100, catalyst_amount = 100},
+			{type = "fluid", name = "kr-dirty-water", amount = 100, catalyst_amount = 100},
 		},
 		results =
 		{

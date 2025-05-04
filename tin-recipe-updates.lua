@@ -97,7 +97,7 @@ end
 util.add_ingredient("kr-fuel-refinery", "solder", 5)
 util.add_ingredient("kr-electrolysis-plant", "solder", 10)
 util.replace_some_ingredient("kr-steel-pipe-to-ground", "steel-plate", 3, "solder", 8)
-util.replace_ingredient("kr-biomass-growing", "petroleum-gas", "organotins")
+util.replace_ingredient("kr-biomass", "petroleum-gas", "organotins")
 
 
 util.add_product("se-scrap-recycling", {type="item", name="tin-ore", amount=1, probability=0.05})
@@ -166,8 +166,9 @@ if util.me.use_cable() then
   end
 
   -- k2
-  util.replace_ingredient("buisart-lab", "copper-cable", "tinned-cable")
+  util.replace_ingredient("kr-advanced-lab", "copper-cable", "tinned-cable")
   util.replace_ingredient("energy-absorber", "copper-cable", "tinned-cable")
+  util.add_ingredient("kr-mineral-water-pumpjack", "tinned-cable", 5)
 end
 
 if util.me.use_bronze() then
