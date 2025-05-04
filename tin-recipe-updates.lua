@@ -47,10 +47,10 @@ util.add_ingredient("rocket-silo", "solder", 100)
 util.add_ingredient("accumulator", "solder", 2)
 util.add_ingredient("se-space-accumulator", "solder", 2)
 util.add_ingredient("storage-tank", "solder", 4)
-util.add_ingredient("kr-fluid-storage-1", "solder", 4)
-util.add_ingredient("kr-fluid-storage-2", "solder", 12)
+util.add_ingredient("kr-fluid-stokr-big-storage-tankrage-1", "solder", 4)
+util.add_ingredient("kr-huge-storage-tank", "solder", 12)
 util.add_ingredient("substation", "solder", 2)
-util.add_ingredient("kr-substation-mk2", "solder", 2)
+util.add_ingredient("kr-superior-substation", "solder", 2)
 util.add_ingredient("se-pylon-substation", "solder", 2)
 util.add_ingredient("se-pylon", "solder", 2)
 util.add_ingredient("se-holmium-solenoid", "solder", 2)
@@ -63,9 +63,9 @@ util.add_ingredient("se-holmium-solenoid", "solder", 2)
 
 -- glass
 if mods.Krastorio2 then
-  util.replace_some_ingredient("glass", "sand", 1, "tin-plate", 1)
-  util.add_product("glass", {type="item", name="tin-plate", amount=1, catalyst_amount=1, probability=0.8})
-  util.set_main_product("glass", "glass")
+  util.replace_some_ingredient("kr-glass", "kr-sand", 1, "tin-plate", 1)
+  util.add_product("kr-glass", {type="item", name="tin-plate", amount=1, catalyst_amount=1, probability=0.8})
+  util.set_main_product("kr-glass", "kr-glass")
 else 
   if mods.bzfoundry then
     if not mods.bzaluminum then
@@ -97,7 +97,7 @@ end
 util.add_ingredient("kr-fuel-refinery", "solder", 5)
 util.add_ingredient("kr-electrolysis-plant", "solder", 10)
 util.replace_some_ingredient("kr-steel-pipe-to-ground", "steel-plate", 3, "solder", 8)
-util.replace_ingredient("kr-biomass-growing", "petroleum-gas", "organotins")
+util.replace_ingredient("kr-biomass", "petroleum-gas", "organotins")
 
 
 util.add_product("se-scrap-recycling", {type="item", name="tin-ore", amount=1, probability=0.05})
@@ -114,11 +114,11 @@ util.add_ingredient("se-space-biochemical-laboratory", "solder", 8)
 util.add_ingredient("se-decontamination-facility", "solder", 10)
 util.add_ingredient("se-life-support-facility", "solder", 40)
 
-util.multiply_recipe("lithium-sulfur-battery", 2)
-util.replace_some_ingredient("lithium-sulfur-battery", "copper-plate", 1, "tin-plate", 1)
+util.multiply_recipe("kr-lithium-sulfur-battery", 2)
+util.replace_some_ingredient("kr-lithium-sulfur-battery", "copper-plate", 1, "tin-plate", 1)
 
 util.add_ingredient("roboport", "solder", 20)
-util.add_ingredient("kr-large-roboport", "solder", 20)
+util.add_ingredient("kr-big-roboport", "solder", 20)
 util.add_ingredient("kr-small-roboport", "solder", 10)
 util.add_ingredient("se-supercharger", "solder", 15)
 util.add_ingredient("kr-filtration-plant", "solder", 4)
@@ -179,8 +179,7 @@ if util.me.use_bronze() then
   local fast_i = mods.bzaluminum and "aluminum-plate" or "iron-plate"
   util.replace_some_ingredient("fast-inserter", fast_i, 1, "bronze-plate", 1)
   if mods.Krastorio2 then
-    util.replace_some_ingredient("filter-inserter", fast_i, 1, "bronze-plate", 1)
-    util.replace_ingredient("kr-steel-pump", "steel-beam", "bronze-plate", 4)
+    util.replace_ingredient("kr-steel-pump", "kr-steel-beam", "bronze-plate", 4)
   end
 
   util.replace_ingredient("pump", "steel-plate", "bronze-plate", 2)
