@@ -55,17 +55,11 @@ util.add_ingredient("se-pylon-substation", "solder", 2)
 util.add_ingredient("se-pylon", "solder", 2)
 util.add_ingredient("se-holmium-solenoid", "solder", 2)
 
--- --  Elecrontics circuit recipes are updated in final fixes:
--- util.multiply_recipe("electronic-circuit", 2)
--- util.replace_some_ingredient("electronic-circuit", "copper-cable", 1, "solder", 1)
--- util.multiply_recipe("electronic-circuit-stone", 2)
--- util.replace_some_ingredient("electronic-circuit-stone", "copper-cable", 1, "solder", 1)
-
 -- glass
 if mods.Krastorio2 then
-  util.replace_some_ingredient("glass", "sand", 1, "tin-plate", 1)
-  util.add_product("glass", {type="item", name="tin-plate", amount=1, catalyst_amount=1, probability=0.8})
-  util.set_main_product("glass", "glass")
+  util.replace_some_ingredient("kr-glass", "kr-sand", 1, "tin-plate", 1)
+  util.add_product("kr-glass", {type="item", name="tin-plate", amount=1, catalyst_amount=1, probability=0.8})
+  util.set_main_product("kr-glass", "kr-glass")
 else 
   if mods.bzfoundry then
     if not mods.bzaluminum then
@@ -86,12 +80,6 @@ else
     util.set_category("sng-glass-plate", "basic-founding")
   end
 end
--- -- NOTE: K2 seems to reset this recipe, so moved to final fixes:
--- util.replace_some_ingredient("se-glass-vulcanite", "sand", 1, "tin-plate", 1)
--- util.add_product("se-glass-vulcanite", {type="item", name="tin-plate", amount=1, probability=0.8})
--- util.set_main_product("se-glass-vulcanite", "glass")
---
--- 248k in /compatibility dir
 -- end glass
 
 util.add_ingredient("kr-fuel-refinery", "solder", 5)
@@ -180,7 +168,6 @@ if util.me.use_bronze() then
   local fast_i = mods.bzaluminum and "aluminum-plate" or "iron-plate"
   util.replace_some_ingredient("fast-inserter", fast_i, 1, "bronze-plate", 1)
   if mods.Krastorio2 then
-    util.replace_some_ingredient("filter-inserter", fast_i, 1, "bronze-plate", 1)
     util.replace_ingredient("kr-steel-pump", "steel-beam", "bronze-plate", 4)
   end
 

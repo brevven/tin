@@ -6,9 +6,9 @@ local util = require("data-util");
 
 util.add_product("jellynut-processing", util.item("jellyskin", 1, .25))  -- in case of clobbering
 
-util.replace_some_ingredient("se-glass-vulcanite", "sand", 1, "tin-plate", 1)
+util.replace_some_ingredient("se-glass-vulcanite", mods["Krastorio2"] and "kr-sand" or "sand", 1, "tin-plate", 1)
 util.add_product("se-glass-vulcanite", {type="item", name="tin-plate", amount=1, catalyst_amount=1, probability=0.8})
-util.set_main_product("se-glass-vulcanite", "glass")
+util.set_main_product("se-glass-vulcanite", mods["Krastorio2"] and "kr-glass" or "glass")
 
 -- core mining balancing
 util.add_to_product("se-core-fragment-omni", "tin-ore", -4)
