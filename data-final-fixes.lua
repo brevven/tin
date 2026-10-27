@@ -49,3 +49,18 @@ require("alloy-separation")  -- should be after final redo_recycling
 
 -- Must be last
 util.create_list()
+
+-- Factorio 2.1 renamed the product field `probability` to
+-- `independent_probability`. Several recipes still use the old field, which
+-- makes the prototype stage fail in 2.1. Normalize every result after all
+-- data-final-fixes have added or modified recipes; 2.0 keeps the old field.
+if helpers.compare_versions(helpers.game_version, "2.1.0") >= 0 then
+  for _, recipe in pairs(data.raw.recipe) do
+    for _, result in pairs(recipe.results or {}) do
+      if type(result) == "table" and result.probability ~= nil then
+        result.independent_probability = result.probability
+        result.probability = nil
+      end
+    end
+  end
+end
